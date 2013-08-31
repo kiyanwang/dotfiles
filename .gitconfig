@@ -58,3 +58,5 @@
     dl = "!git lc -1"                # last commit 
     dlc = diff --cached HEAD^        # diff last commit
 
+[diff]
+    external = git-meld
