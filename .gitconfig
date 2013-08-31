@@ -48,6 +48,7 @@
 
     #status
     st = status
+    stc = status -sb
 
     # stash
     sl = stash list
