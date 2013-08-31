@@ -4,6 +4,8 @@
 
 [color]
     ui = true
+    branch = auto
+    status = auto
 
 [color "branch"]
     current = yellow reverse
@@ -69,7 +71,7 @@
     standup = "!git log --since yesterday --author `git config user.email` --pretty=short" 
 
     # what files are being ignored
-    ignored = ls-files –others -i –exclude-standard
+    ignored = ls-files --others --ignored --exclude-standard
 
 [diff]
     external = git-meld
