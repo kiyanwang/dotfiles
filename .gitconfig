@@ -1,0 +1,53 @@
+[user]
+    name = <NAME>
+    email = <EMAIL>
+
+[color]
+    ui = true
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[gc]
+    auto = 1
+
+[merge]
+    summary = true
+
+[alias]
+    # log
+    l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+    ll = log --graph --date=short
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    lstat = log --stat --abbrev-commit
+
+    # commit
+    ci = commit -m                    # commit with message
+    ca = commit -am                   # commit all with message
+    c = commit                        # commit
+    amend = commit --amend            # ammend your last commit
+    ammend = commit --amend           # ammend your last commit
+
+    # checkout and branching
+    co = checkout
+    newbranch = checkout -b
+    branches  = branch -v
+
+    #status
+    st = status
+
+    # stash
+    sl = stash list
+    sa = stash apply
+    ss = stash save
+
+    #remote
+    remotes = remote -v
