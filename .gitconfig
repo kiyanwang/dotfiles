@@ -68,5 +68,8 @@
     # standup i.e. what did i do yesterday 
     standup = "!git log --since yesterday --author `git config user.email` --pretty=short" 
 
+    # what files are being ignored
+    ignored = ls-files –others -i –exclude-standard
+
 [diff]
     external = git-meld
