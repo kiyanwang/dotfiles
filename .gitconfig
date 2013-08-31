@@ -61,5 +61,8 @@
     dl = "!git lc -1"                # last commit 
     dlc = diff --cached HEAD^        # diff last commit
 
+    # who has worked on this repo
+    who = shortlog -n -s --no-merges
+
 [diff]
     external = git-meld
