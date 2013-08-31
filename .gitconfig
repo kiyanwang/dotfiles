@@ -65,5 +65,8 @@
     # who has worked on this repo
     who = shortlog -n -s --no-merges
 
+    # standup i.e. what did i do yesterday 
+    standup = "!git log --since yesterday --author `git config user.email` --pretty=short" 
+
 [diff]
     external = git-meld
