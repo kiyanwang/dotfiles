@@ -92,6 +92,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 alias whatschanged="svn st --ignore-externals | grep -v '^X '"
 alias ppjson="python -mjson.tool"
+alias ppxml="xmllint --format -"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
