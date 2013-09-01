@@ -91,6 +91,7 @@ alias l='ls -CF'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 alias whatschanged="svn st --ignore-externals | grep -v '^X '"
+alias ppjson="python -mjson.tool"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
