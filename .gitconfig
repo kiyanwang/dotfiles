@@ -45,8 +45,8 @@
     branches  = branch -v
 
     # get upstream changes
-    up = !git fetch origin && git rebase origin/master
-    ir = !git rebase -i origin/master
+    up = "!git fetch origin && git rebase origin/master"
+    ir = "!git rebase -i origin/master"
 
     #status
     st = status
