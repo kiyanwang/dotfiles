@@ -138,7 +138,18 @@ parse_svn_url() {
 parse_svn_repository_root() {
   svn info 2>/dev/null | sed -ne 's#^Repository Root: ##p'
 }
- 
+
+# returns the svn revision when the branch you are in was created
+get_svn_revision_when_branch_was_created(){
+  svn log -q --stop-on-copy | grep -v -e '\-\-\-' | tail -1 | awk '{ print $1 }' | sed -e 's/r//g'
+}
+
+# performs a diff btw the branch at the revision it was created and now
+whatschanged_on_this_svn_branch(){
+    svn diff $(parse_svn_url)@$(get_svn_revision_when_branch_was_created) $(parse_svn_url) --diff-cmd meld
+}
+
+
 NO_COLOUR="\[\033[0m\]"
 BLACK="\[\033[0;90m\]"       # Black
 RED="\[\033[0;91m\]"         # Red
