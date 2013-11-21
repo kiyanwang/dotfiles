@@ -43,6 +43,7 @@
     co = checkout
     newbranch = checkout -b
     branches  = branch -v
+    delbranch = branch -d
 
     # get upstream changes
     up = "!git fetch origin && git rebase origin/master"
@@ -59,6 +60,8 @@
 
     #remote
     remotes = remote -v
+    prune-stale-dryrun = remote prune origin --dry-run
+    prune-stale = remote prune origin
 
     # diff
     dl = "!git lc -1"                # last commit 
