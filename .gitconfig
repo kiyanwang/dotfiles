@@ -76,8 +76,8 @@
     # what files are being ignored
     ignored = ls-files --others --ignored --exclude-standard
 
-	# remove a branch both locally and remotely when it is no longer needed
-	rmb = "!f() { git branch -D $1 && git push origin :$1; }; f"
+    # remove a branch both locally and remotely when it is no longer needed
+    rmb = "!f() { git branch -D $1 && git push origin :$1; }; f"
 	
 [diff]
     external = git-meld
