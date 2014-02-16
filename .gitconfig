@@ -81,6 +81,9 @@
     
     # undo all changes on this branch ,hard reset
     undo = reset --hard
+    
+    # show all aliases
+    aliases = "!git config -l | grep alias | cut -c 7-"
 	
 [diff]
     external = git-meld
