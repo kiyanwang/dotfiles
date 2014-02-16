@@ -78,6 +78,9 @@
 
     # remove a branch both locally and remotely when it is no longer needed
     rmb = "!f() { git branch -D $1 && git push origin :$1; }; f"
+    
+    # undo all changes on this branch ,hard reset
+    undo = reset --hard
 	
 [diff]
     external = git-meld
