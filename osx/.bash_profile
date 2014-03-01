@@ -13,6 +13,9 @@ alias l="ls -l ${colorflag}"
 # List all files colorized in long format, including dot files
 alias la="ls -la ${colorflag}"
 
+# alias version of ack to use
+# sudo port install p5.16-app-ack
+alias ack="ack-5.16"
 
 # List only directories
 alias lsd='ls -l | grep "^d"'
