@@ -63,6 +63,9 @@
     prune-stale-dryrun = remote prune origin --dry-run
     prune-stale = remote prune origin
 
+    # search repo, with ack style output
+    g = grep --break --heading --line-number
+
     # diff
     dl = "!git lc -1"                # last commit 
     dlc = diff --cached HEAD^        # diff last commit
