@@ -76,5 +76,14 @@
     # what files are being ignored
     ignored = ls-files --others --ignored --exclude-standard
 
+    # remove a branch both locally and remotely when it is no longer needed
+    rmb = "!f() { git branch -D $1 && git push origin :$1; }; f"
+    
+    # undo all changes on this branch ,hard reset
+    undo = reset --hard
+    
+    # show all aliases
+    aliases = "!git config -l | grep alias | cut -c 7-"
+	
 [diff]
     external = git-meld
