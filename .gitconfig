@@ -65,6 +65,7 @@
     remotes = remote -v
     prune-stale-dryrun = remote prune origin --dry-run
     prune-stale = remote prune origin
+    prune-local = "!git branch --merged master | grep -v '\\* master' | xargs -n 1 git branch -d"
 
     # search repo, with ack style output
     g = grep --break --heading --line-number
