@@ -35,3 +35,4 @@ set paste
 set mouse=a
 set ruler
 
+map <C-n> :NERDTreeToggle<CR>
