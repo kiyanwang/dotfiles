@@ -1,6 +1,16 @@
 " .vimrc
 " Author: Nadeem Shabir
 " Source: https://github.com/kiyanwang/dotfiles/.vimrc
+" Installed plugins:
+" - ctrlp.vim
+" - nerdtree
+" - tabular
+" - vim-airline
+" - vim-fugitive
+" - vim-gitgutter
+" - vim-puppet
+" --
+
 filetype off
 execute pathogen#infect()
 filetype indent plugin on
