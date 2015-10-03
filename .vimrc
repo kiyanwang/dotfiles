@@ -1,5 +1,5 @@
 " .vimrc
-" Author: Nadeem Shabir 
+" Author: Nadeem Shabir
 " Source: https://github.com/kiyanwang/dotfiles/.vimrc
 filetype off
 execute pathogen#infect()
