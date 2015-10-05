@@ -9,6 +9,7 @@
 " - vim-fugitive
 " - vim-gitgutter
 " - vim-puppet
+" - Emmett.vim
 " --
 
 filetype off
