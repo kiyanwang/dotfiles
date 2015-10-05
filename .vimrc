@@ -11,6 +11,7 @@
 " - vim-puppet
 " - Emmett.vim
 " - snipmate + vim-snippets
+" - PIV, Php 5.3 
 "" --
 
 filetype off
@@ -54,7 +55,9 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-
+let g:DisableAutoPHPFolding = 1
 map <C-n> :NERDTreeToggle<CR>
