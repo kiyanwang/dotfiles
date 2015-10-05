@@ -10,7 +10,8 @@
 " - vim-gitgutter
 " - vim-puppet
 " - Emmett.vim
-" --
+" - snipmate + vim-snippets
+"" --
 
 filetype off
 execute pathogen#infect()
@@ -39,7 +40,7 @@ set mat=2
 set title
 set cursorline
 set scrolloff=5
-set paste
+" set paste
 set mouse=a
 set ruler
 set laststatus=2
