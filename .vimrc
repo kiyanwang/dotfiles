@@ -11,7 +11,7 @@
 " - vim-puppet
 " - Emmett.vim
 " - snipmate + vim-snippets
-" - PIV, Php 5.3 
+" - PIV, Php 5.3
 "" --
 
 filetype off
@@ -54,6 +54,11 @@ set expandtab
 set smarttab
 set shiftwidth=4
 set tabstop=4
+
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
