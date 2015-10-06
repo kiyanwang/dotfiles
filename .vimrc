@@ -41,7 +41,6 @@ set mat=2
 set title
 set cursorline
 set scrolloff=5
-" set paste
 set mouse=a
 set ruler
 set laststatus=2
@@ -64,9 +63,12 @@ au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:DisableAutoPHPFolding = 1
+
+let g:DisableAutoPHPFolding = 1 
+let g:DisablePHPFolds = 1
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
+let g:SuperTabDefaultCompletionType = "context"
 
 " Bi-directional find motion
 " " Jump to anywhere you want with minimal keystrokes, with just one key
