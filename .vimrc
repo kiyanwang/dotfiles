@@ -85,4 +85,6 @@ let g:EasyMotion_smartcase = 1
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
+nmap <F8> :TagbarToggle<CR>
+nnoremap tn :TagbarOpen fj<CR>
 map <C-n> :NERDTreeToggle<CR>
