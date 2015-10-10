@@ -24,6 +24,7 @@ colorscheme solarized
 set background=dark
 syntax on
 
+set wildmenu
 set encoding=utf-8
 set autoindent
 set showmode
@@ -53,23 +54,34 @@ set expandtab
 set smarttab
 set shiftwidth=4
 set tabstop=4
+set softtabstop=4
+
+set pastetoggle=<F2>
 
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
 
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+au FileType puppet setlocal isk+=:
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
-let g:DisableAutoPHPFolding = 1 
+let g:DisableAutoPHPFolding = 1
 let g:DisablePHPFolds = 1
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 let g:SuperTabDefaultCompletionType = "context"
 
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_show_hidden = 1
 " Bi-directional find motion
 " " Jump to anywhere you want with minimal keystrokes, with just one key
 " binding.
@@ -90,3 +102,11 @@ map <Leader>k <Plug>(easymotion-k)
 nmap <F8> :TagbarToggle<CR>
 nnoremap tn :TagbarOpen fj<CR>
 map <C-n> :NERDTreeToggle<CR>
+
+let mapleader=","
+nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <leader>. :bn<CR>  " next buffer
+nnoremap <leader>, :bn<CR>  " previous buffer
+nnoremap <leader>ev :e $MYVIMRC<CR>  " quick edit .vimrc
+nnoremap <leader>sv :so $MYVIMRC<CR>  " reload .vimrc
+
