@@ -45,6 +45,7 @@ set scrolloff=5
 set mouse=a
 set ruler
 set laststatus=2
+set linebreak
 
 set nobackup
 set nowb
