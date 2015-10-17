@@ -1,5 +1,4 @@
 #!/bin/zsh
-
 # My starter template for tmux layout
 SESSION=`basename $PWD`
 
@@ -29,7 +28,7 @@ tmux send-keys "mc" C-m
 tmux select-pane -t 4
 tmux send-keys "htop" C-m
 tmux select-pane -t 2
-tmux send-keys "bmon -o curses" C-m
+#tmux send-keys "bmon -o curses" C-m
 
 tmux select-window -t $SESSION:1
 tmux -2 attach -t $SESSION
