@@ -56,7 +56,10 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
-
+set clipboard=unnamed
+if $TMUX == ''
+  set clipboard+=unnamed
+endif
 set pastetoggle=<F2>
 
 nnoremap <c-j> <c-w>j
