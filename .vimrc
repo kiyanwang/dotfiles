@@ -2,16 +2,24 @@
 " Author: Nadeem Shabir
 " Source: https://github.com/kiyanwang/dotfiles/.vimrc
 " Installed plugins:
+" - Emmet.vim
+" - PIV
+" - ag.vim
 " - ctrlp.vim
 " - nerdtree
+" - node
+" - snipmate.vim
+" - supertab
+" - syntastic
 " - tabular
+" - tagbar
 " - vim-airline
+" - vim-easymotion
 " - vim-fugitive
 " - vim-gitgutter
 " - vim-puppet
-" - Emmett.vim
-" - snipmate + vim-snippets
-" - PIV, Php 5.3
+" - vim-snippets
+" - vim-tmux-navigator
 "" --
 
 filetype off
@@ -51,6 +59,8 @@ set nobackup
 set nowb
 set noswapfile
 
+set nofoldenable
+
 set expandtab
 set smarttab
 set shiftwidth=4
@@ -72,6 +82,8 @@ nnoremap k gk
 
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 au FileType puppet setlocal isk+=:
+
+let g:ag_prg="ag --vimgrep"
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
