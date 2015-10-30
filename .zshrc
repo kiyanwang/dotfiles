@@ -86,6 +86,10 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ll="ls -alh"
 export EDITOR=vim
 setopt AUTO_CD
+
+alias ll="ls -alh"
+alias c='pygmentize -O style=monokai,bg=dark -f console256 -g'
+alias applisten="lsof -P -i -n"
+

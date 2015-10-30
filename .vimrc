@@ -82,6 +82,7 @@ nnoremap k gk
 
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 au FileType puppet setlocal isk+=:
+au BufReadPost *.eyaml set syntax=yaml
 
 let g:ag_prg="ag --vimgrep"
 
@@ -98,6 +99,13 @@ let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_show_hidden = 1
+
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_puppet_puppetlint_args = "--no-80chars-check"
+
 " Bi-directional find motion
 " " Jump to anywhere you want with minimal keystrokes, with just one key
 " binding.
@@ -122,7 +130,6 @@ map <C-n> :NERDTreeToggle<CR>
 let mapleader=","
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>. :bn<CR>  " next buffer
-nnoremap <leader>, :bn<CR>  " previous buffer
+nnoremap <leader>, :bp<CR>  " previous buffer
 nnoremap <leader>ev :e $MYVIMRC<CR>  " quick edit .vimrc
 nnoremap <leader>sv :so $MYVIMRC<CR>  " reload .vimrc
-
