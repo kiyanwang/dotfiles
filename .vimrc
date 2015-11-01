@@ -6,6 +6,7 @@
 " - PIV
 " - ag.vim
 " - ctrlp.vim
+" - gist-vim
 " - nerdcommenter
 " - nerdtree
 " - node
@@ -22,6 +23,7 @@
 " - vim-snippets
 " - vim-surround
 " - vim-tmux-navigator
+" - webapi-vim (needed by gist-vim)
 "" --
 
 filetype off
