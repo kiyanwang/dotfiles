@@ -6,19 +6,20 @@
 " - PIV
 " - ag.vim
 " - ctrlp.vim
+" - nerdcommenter
 " - nerdtree
 " - node
-" - snipmate.vim
-" - supertab
 " - syntastic
 " - tabular
 " - tagbar
+" - ultisnips
 " - vim-airline
 " - vim-easymotion
 " - vim-fugitive
 " - vim-gitgutter
 " - vim-puppet
 " - vim-snippets
+" - vim-surround
 " - vim-tmux-navigator
 "" --
 
@@ -93,7 +94,12 @@ let g:DisableAutoPHPFolding = 1
 let g:DisablePHPFolds = 1
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
-let g:SuperTabDefaultCompletionType = "context"
+" let g:SuperTabDefaultCompletionType = "context"
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
 
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
