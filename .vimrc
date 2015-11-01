@@ -13,6 +13,7 @@
 " - tabular
 " - tagbar
 " - ultisnips
+" - vim-abolish
 " - vim-airline
 " - vim-easymotion
 " - vim-fugitive
