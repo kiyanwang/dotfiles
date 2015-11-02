@@ -90,6 +90,8 @@ au BufReadPost *.eyaml set syntax=yaml
 
 let g:ag_prg="ag --vimgrep"
 
+let g:NERDTreeShowHidden=1
+
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
