@@ -19,6 +19,7 @@
 " - vim-easymotion
 " - vim-fugitive
 " - vim-gitgutter
+" - vim-gitv
 " - vim-puppet
 " - vim-qargs
 " - vim-snippets
