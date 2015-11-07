@@ -20,6 +20,7 @@
 " - vim-fugitive
 " - vim-gitgutter
 " - vim-puppet
+" - vim-qargs
 " - vim-snippets
 " - vim-surround
 " - vim-tmux-navigator
