@@ -45,6 +45,7 @@ set visualbell
 set ttyfast
 set backspace=indent,eol,start
 set number
+set relativenumber
 set hlsearch
 set incsearch
 set ignorecase
