@@ -5,6 +5,7 @@
 " - Emmet.vim
 " - PIV
 " - ag.vim
+" - ansible-vim
 " - ctrlp.vim
 " - gist-vim
 " - nerdcommenter

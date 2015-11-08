@@ -15,6 +15,7 @@ git clone https://github.com/majutsushi/tagbar.git
 git clone https://github.com/mattn/gist-vim.git
 git clone https://github.com/mattn/webapi-vim.git
 git clone https://github.com/moll/vim-node.git
+git clone https://github.com/pearofducks/ansible-vim.git
 git clone https://github.com/rking/ag.vim.git
 git clone https://github.com/rodjek/vim-puppet.git
 git clone https://github.com/scrooloose/nerdcommenter.git
