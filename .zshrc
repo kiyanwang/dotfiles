@@ -92,4 +92,4 @@ setopt AUTO_CD
 alias ll="ls -alh"
 alias c='pygmentize -O style=monokai,bg=dark -f console256 -g'
 alias applisten="lsof -P -i -n"
-
+alias vless="/opt/local/share/vim/vim74/macros/less.sh"
