@@ -40,6 +40,7 @@ set background=dark
 syntax on
 
 set wildmenu
+set wildignore+=.git\*,.hg\*,.svn\*
 set encoding=utf-8
 set autoindent
 set showmode
@@ -66,7 +67,7 @@ set linebreak
 set nobackup
 set nowb
 set noswapfile
-
+set foldcolumn=1
 set nofoldenable
 
 set expandtab
@@ -149,3 +150,9 @@ nnoremap <leader>. :bn<CR>  " next buffer
 nnoremap <leader>, :bp<CR>  " previous buffer
 nnoremap <leader>ev :e $MYVIMRC<CR>  " quick edit .vimrc
 nnoremap <leader>sv :so $MYVIMRC<CR>  " reload .vimrc
+" fugitive mappings
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gb :Gblame<CR>
+
+
