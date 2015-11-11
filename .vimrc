@@ -23,6 +23,7 @@
 " - vim-gitv
 " - vim-puppet
 " - vim-qargs
+" - vim-simple-todos
 " - vim-snippets
 " - vim-surround
 " - vim-tmux-navigator
@@ -154,5 +155,3 @@ nnoremap <leader>sv :so $MYVIMRC<CR>  " reload .vimrc
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gb :Gblame<CR>
-
-
