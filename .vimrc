@@ -82,6 +82,10 @@ if $TMUX == ''
 endif
 set pastetoggle=<F2>
 
+" For powerline font in MacVim
+set guifont=Source\ Code\ Pro\ for\ Powerline:h14
+
+
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
