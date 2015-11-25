@@ -71,11 +71,17 @@ set noswapfile
 set foldcolumn=1
 set nofoldenable
 
+" default ident to 4 spaces
 set expandtab
 set smarttab
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
+" javascript 2 spaces
+autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
+
+set iskeyword=-,:,@,48-57,_,192-255
+
 set clipboard=unnamed
 if $TMUX == ''
   set clipboard+=unnamed
