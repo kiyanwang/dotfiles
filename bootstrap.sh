@@ -10,6 +10,7 @@ git clone https://github.com/godlygeek/tabular.git
 git clone https://github.com/gregsexton/gitv.git
 git clone https://github.com/henrik/vim-qargs.git
 git clone https://github.com/honza/vim-snippets.git
+git clone https://github.com/kchmck/vim-coffee-script.git
 git clone https://github.com/kien/ctrlp.vim.git 
 git clone https://github.com/majutsushi/tagbar.git
 git clone https://github.com/mattn/gist-vim.git

@@ -74,9 +74,9 @@ set nofoldenable
 " default ident to 4 spaces
 set expandtab
 set smarttab
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 " javascript 2 spaces
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
 
@@ -90,7 +90,6 @@ set pastetoggle=<F2>
 
 " For powerline font in MacVim
 set guifont=Source\ Code\ Pro\ for\ Powerline:h14
-
 
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
