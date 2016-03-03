@@ -58,7 +58,7 @@ plugins=(git, colorize)
 
 export PATH="/Users/nadeemshabir/.rvm/gems/ruby-1.9.3-p448/bin:/Users/nadeemshabir/.rvm/gems/ruby-1.9.3-p448@global/bin:/Users/nadeemshabir/.rvm/rubies/ruby-1.9.3-p448/bin:/Users/nadeemshabir/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
-export PATH="/opt/local/bin:/opt/local/sbin:/opt/puppetlabs/bin:$PATH"
+export PATH="/opt/local/bin:/opt/local/sbin:/opt/puppetlabs/bin:/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -95,3 +95,13 @@ alias applisten="lsof -P -i -n"
 alias vless="/opt/local/share/vim/vim74/macros/less.sh"
 
 source ~/.aliases
+source ~/.server_aliases
+
+autoload -U compinit && compinit
+autoload -U bashcompinit && bashcompinit
+
+export PATH="$PATH:$HOME/.ec2.cli"
+script_dir=$(dirname $0)
+if [ -f ~/.ec2.cli/completion.bash ]; then
+	source ~/.ec2.cli/completion.bash
+fi
