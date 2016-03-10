@@ -158,8 +158,8 @@ let mapleader=","
 
 " integration with the boxes utility
 " ( installed via port install boxes )
-vmap ,mc !boxes -d shell -p a1<CR>
-nmap ,mc !!boxes -d shell -p a1<CR>
+vmap ,mc !boxes -d shell -s 80 -a c<CR>
+nmap ,mc !!boxes -d shell -s 80 -a c <CR>
 vmap ,xc !boxes -d shell -r<CR>
 nmap ,xc !!boxes -d shell -r<CR>
 
