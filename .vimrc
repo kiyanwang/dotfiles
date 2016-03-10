@@ -163,6 +163,11 @@ nmap ,mc !!boxes -d shell -s 80 -a c <CR>
 vmap ,xc !boxes -d shell -r<CR>
 nmap ,xc !!boxes -d shell -r<CR>
 
+" switch to previously opened buffer and close the one we just
+" switched away from (does the equivelant of :bd but without destroying
+" my split window)
+nmap <leader>bd :b#<bar>bd#<CR>
+
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>. :bn<CR>  " next buffer
 nnoremap <leader>, :bp<CR>  " previous buffer
