@@ -155,6 +155,14 @@ nnoremap tn :TagbarOpen fj<CR>
 map <C-n> :NERDTreeToggle<CR>
 
 let mapleader=","
+
+" integration with the boxes utility
+" ( installed via port install boxes )
+vmap ,mc !boxes -d shell -p a1<CR>
+nmap ,mc !!boxes -d shell -p a1<CR>
+vmap ,xc !boxes -d shell -r<CR>
+nmap ,xc !!boxes -d shell -r<CR>
+
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>. :bn<CR>  " next buffer
 nnoremap <leader>, :bp<CR>  " previous buffer
