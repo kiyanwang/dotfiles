@@ -133,6 +133,12 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_puppet_puppetlint_args = "--no-80chars-check"
 
+" Default mapping
+let g:multi_cursor_next_key='<C-m>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
 " Bi-directional find motion
 " " Jump to anywhere you want with minimal keystrokes, with just one key
 " binding.
