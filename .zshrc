@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/nadeemshabir/.oh-my-zsh
-
+#export DASHT_DOCSETS_DIR=~/Library/Application\ Support/Dash/DocSets/
 [[ $TMUX = "" ]] && export TERM="xterm-256color"
 
 # Set name of the theme to load.
@@ -58,7 +58,7 @@ plugins=(git, colorize)
 
 export PATH="/Users/nadeemshabir/.rvm/gems/ruby-1.9.3-p448/bin:/Users/nadeemshabir/.rvm/gems/ruby-1.9.3-p448@global/bin:/Users/nadeemshabir/.rvm/rubies/ruby-1.9.3-p448/bin:/Users/nadeemshabir/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
-export PATH="/opt/local/bin:/opt/local/sbin:/opt/puppetlabs/bin:/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH"
+export PATH="/opt/local/bin:/opt/local/sbin:/opt/puppetlabs/bin:/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:/Users/nadeemshabir/Development/dasht/bin:/Users/nadeemshabir/Development/projects/go/bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,7 +101,7 @@ autoload -U compinit && compinit
 autoload -U bashcompinit && bashcompinit
 
 export PATH="$PATH:$HOME/.ec2.cli"
-script_dir=$(dirname $0)
+# script_dir=$(dirname $0)
 if [ -f ~/.ec2.cli/completion.bash ]; then
 	source ~/.ec2.cli/completion.bash
 fi

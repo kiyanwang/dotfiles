@@ -4,6 +4,7 @@ cd ~/.vim
 git clone https://github.com/SirVer/ultisnips.git
 git clone https://github.com/airblade/vim-gitgutter.git
 git clone https://github.com/bling/vim-airline.git
+git clone https://github.com/chase/vim-ansible-yaml
 git clone https://github.com/christoomey/vim-tmux-navigator.git
 git clone https://github.com/easymotion/vim-easymotion.git
 git clone https://github.com/godlygeek/tabular.git
