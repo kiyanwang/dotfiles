@@ -183,3 +183,6 @@ nnoremap <leader>sv :so $MYVIMRC<CR>  " reload .vimrc
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gb :Gblame<CR>
+
+" set working directory to current file
+nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
