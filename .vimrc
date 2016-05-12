@@ -186,3 +186,5 @@ nnoremap <leader>gb :Gblame<CR>
 
 " set working directory to current file
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+" remove all trailing whitespace from the file
+nnoremap ,ws :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
