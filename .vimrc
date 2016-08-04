@@ -102,6 +102,7 @@ nnoremap k gk
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 au FileType puppet setlocal isk+=:
 au BufReadPost *.eyaml set syntax=yaml
+au BufNewFile,BufRead *.yaml set filetype=yaml.ansible
 
 let g:ag_prg="ag --vimgrep"
 

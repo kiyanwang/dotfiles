@@ -105,3 +105,6 @@ export PATH="$PATH:$HOME/.ec2.cli"
 if [ -f ~/.ec2.cli/completion.bash ]; then
 	source ~/.ec2.cli/completion.bash
 fi
+
+export NVM_DIR="/Users/nadeemshabir/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
