@@ -64,6 +64,7 @@ set mouse=a
 set ruler
 set laststatus=2
 set linebreak
+set lazyredraw
 
 set nobackup
 set nowb
