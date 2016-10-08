@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/.vim
+cd ~/.vim/bundle
 git clone https://github.com/SirVer/ultisnips.git
 git clone https://github.com/airblade/vim-gitgutter.git
 git clone https://github.com/bling/vim-airline.git
