@@ -44,7 +44,7 @@ alias prikey="more ~/.ssh/id_ns_rsa | xclip -selection clipboard | echo '=> Priv
 
 # generate phpctags for the current directory and its subdirs
 # the function takes 2 args, the first is the name of the file the tags should be stored in
-# the seconds if the directory to exclude
+# the second is the directory to exclude
 # todo: improve the way the function args list works for now its enough
 createtags() {
   echo "Running: phpctags --memory=536870912 --exclude=$2 -f $1 -R"
