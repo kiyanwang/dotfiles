@@ -35,7 +35,7 @@
     ll = log --graph --date=short
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
     lstat = log --stat --abbrev-commit
-    lc = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat  
+    lc = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 
     # how many unpushed commits do I have
     ahead = log --stat @{u}..HEAD
@@ -76,26 +76,26 @@
     g = grep --break --heading --line-number
 
     # diff
-    dl = "!git lc -1"                # last commit 
+    dl = "!git lc -1"                # last commit
     dlc = diff --cached HEAD^        # diff last commit
 
     # who has worked on this repo
     who = shortlog -n -s --no-merges
 
-    # standup i.e. what did i do yesterday 
-    standup = "!git log --since yesterday --author `git config user.email` --pretty=short" 
+    # standup i.e. what did i do yesterday
+    standup = "!git log --since yesterday --author `git config user.email` --pretty=short"
 
     # what files are being ignored
     ignored = ls-files --others --ignored --exclude-standard
 
     # remove a branch both locally and remotely when it is no longer needed
     rmb = "!f() { git branch -D $1 && git push origin :$1; }; f"
-    
+
     # undo all changes on this branch ,hard reset
     undo = reset --hard
-    
+
     # show all aliases
     aliases = "!git config -l | grep alias | cut -c 7-"
-	
+
 [diff]
     external = git-meld

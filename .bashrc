@@ -113,18 +113,18 @@ fi
 parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (git::\1)/'
 }
- 
+
 parse_git_tag () {
   git describe --tags 2> /dev/null
 }
- 
+
 parse_git_branch_or_tag() {
- 
+
   local OUT="$(parse_git_branch)"
   if [ "$OUT" == " ((no branch))" ]; then
     OUT="[$(parse_git_tag)]";
   fi
- 
+
   echo $OUT
 }
 
@@ -159,7 +159,7 @@ BLUE="\[\033[0;94m\]"        # Blue
 PURPLE="\[\033[0;95m\]"      # Purple
 CYAN="\[\033[0;96m\]"        # Cyan
 WHITE="\[\033[0;97m\]"       # White
- 
+
 #PS1="$GREEN\u$NO_COLOUR:\w$HC$YELLOW\$(parse_git_branch_or_tag)$NO_COLOUR $RED"$'\u2605 \u27a4'" $NO_COLOUR "
 PS1="$RED"$'\u2605'"$BLUE [\t] $NO_COLOUR\w$YELLOW\$(parse_git_branch_or_tag)\$(parse_svn_branch) $RED"$'\u27a4'" $NO_COLOUR "
 export ASPIRE_BUILD_USER=ns
