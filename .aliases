@@ -42,6 +42,15 @@ alias pubkey="more ~/.ssh/id_ns_rsa.pub | xclip -selection clipboard | echo '=> 
 # Pipe my private key to my clipboard.
 alias prikey="more ~/.ssh/id_ns_rsa | xclip -selection clipboard | echo '=> Private key copied to pasteboard.'"
 
+# make mkdir create path of dirs by default
+alias mkdir="mkdir -pv"
+
+# search history with grep more easily
+alias histgrep="history | grep"
+
+# find out my public ip address
+alias whatsmyip="curl http://ipecho.net/plain; echo"
+
 # generate phpctags for the current directory and its subdirs
 # the function takes 2 args, the first is the name of the file the tags should be stored in
 # the second is the directory to exclude
