@@ -2,6 +2,7 @@
 
 cd ~/.vim/bundle
 git clone https://github.com/SirVer/ultisnips.git
+git clone https://github.com/adoy/vim-php-refactoring-toolbox.git
 git clone https://github.com/airblade/vim-gitgutter.git
 git clone https://github.com/bling/vim-airline.git
 git clone https://github.com/chase/vim-ansible-yaml
