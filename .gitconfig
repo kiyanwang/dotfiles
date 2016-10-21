@@ -21,6 +21,11 @@
 [gc]
     auto = 1
 
+[grep]
+    break = true
+    heading = true
+    lineNumber = true
+
 [merge]
     summary = true
 
