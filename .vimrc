@@ -12,7 +12,6 @@ set t_Co=256
 
 "colorscheme solarized
 "set background=dark
-
 colorscheme iceberg
 set background=light
 syntax on
