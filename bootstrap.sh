@@ -7,6 +7,8 @@ git clone https://github.com/airblade/vim-gitgutter.git
 git clone https://github.com/bling/vim-airline.git
 git clone https://github.com/chase/vim-ansible-yaml
 git clone https://github.com/christoomey/vim-tmux-navigator.git
+git clone https://github.com/derekprior/vim-trimmer.git
+git clone https://github.com/duggiefresh/vim-easydir.git
 git clone https://github.com/easymotion/vim-easymotion.git
 git clone https://github.com/godlygeek/tabular.git
 git clone https://github.com/gregsexton/gitv.git

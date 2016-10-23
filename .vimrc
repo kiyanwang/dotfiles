@@ -1,34 +1,7 @@
 " .vimrc
 " Author: Nadeem Shabir
 " Source: https://github.com/kiyanwang/dotfiles/.vimrc
-" Installed plugins:
-" - Emmet.vim
-" - PIV
-" - ag.vim
-" - ansible-vim
-" - ctrlp.vim
-" - gist-vim
-" - nerdcommenter
-" - nerdtree
-" - node
-" - syntastic
-" - tabular
-" - tagbar
-" - ultisnips
-" - vim-abolish
-" - vim-airline
-" - vim-easymotion
-" - vim-fugitive
-" - vim-gitgutter
-" - vim-gitv
-" - vim-puppet
-" - vim-qargs
-" - vim-simple-todos
-" - vim-snippets
-" - vim-surround
-" - vim-tmux-navigator
-" - webapi-vim (needed by gist-vim)
-"" --
+" Installed plugins: see bootstraph.sh which needs to be run
 
 filetype off
 execute pathogen#infect()
@@ -36,8 +9,12 @@ filetype indent plugin on
 set nocompatible
 
 set t_Co=256
-colorscheme solarized
-set background=dark
+
+"colorscheme solarized
+"set background=dark
+
+colorscheme iceberg
+set background=light
 syntax on
 
 set wildmenu
@@ -45,6 +22,7 @@ set wildignore+=.git\*,.hg\*,.svn\*
 set encoding=utf-8
 set autoindent
 set showmode
+set showcmd
 set hidden
 set visualbell
 set ttyfast
@@ -65,6 +43,8 @@ set ruler
 set laststatus=2
 set linebreak
 set lazyredraw
+" Dont ask me if I want to load changed files. Answer is always yes
+set autoread
 
 set nobackup
 set nowb
@@ -80,8 +60,14 @@ set tabstop=2
 set softtabstop=2
 " javascript 2 spaces
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
+" php 4 spaces
+autocmd Filetype php setlocal ts=4 sw=4 sts=0 expandtab
 
 set iskeyword=-,:,@,48-57,_,192-255
+
+set fileencodings=utf-8,iso-8859-1
+set fileformats=unix,mac,dos
+set textwidth=80
 
 set clipboard=unnamed
 if $TMUX == ''
@@ -105,10 +91,17 @@ au FileType puppet setlocal isk+=:
 au BufReadPost *.eyaml set syntax=yaml
 au BufNewFile,BufRead *.yaml set filetype=yaml.ansible
 
+function! Today()
+  let today = strftime("%A %d\/%m\/%Y")
+  exe "normal a". today
+endfunction
+command! Today :call Today()
+
 let g:ag_prg="ag --vimgrep"
 
 let g:NERDTreeShowHidden=1
 
+let g:airline_theme='papercolor'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
