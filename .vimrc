@@ -10,10 +10,8 @@ set nocompatible
 
 set t_Co=256
 
-"colorscheme solarized
-"set background=dark
-colorscheme iceberg
-set background=light
+colorscheme solarized
+set background=dark
 syntax on
 
 set wildmenu
@@ -62,6 +60,10 @@ autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
 " php 4 spaces
 autocmd Filetype php setlocal ts=4 sw=4 sts=0 expandtab
 
+" Fixes syntax highlighting issues, its a little slower
+" this way but more accurate, i can live with that
+autocmd BufEnter * :syntax sync fromstart
+
 set iskeyword=-,:,@,48-57,_,192-255
 
 set fileencodings=utf-8,iso-8859-1
@@ -77,6 +79,7 @@ set pastetoggle=<F2>
 " For powerline font in MacVim
 set guifont=Source\ Code\ Pro\ for\ Powerline:h14
 
+inoremap jk <ESC> " map jk to esc key
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
@@ -100,7 +103,7 @@ let g:ag_prg="ag --vimgrep"
 
 let g:NERDTreeShowHidden=1
 
-let g:airline_theme='papercolor'
+let g:airline_theme='solarized'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -120,6 +123,7 @@ let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
@@ -150,8 +154,6 @@ let g:EasyMotion_smartcase = 1
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
-nmap <F8> :TagbarToggle<CR>
-nnoremap tn :TagbarOpen fj<CR>
 map <C-n> :NERDTreeToggle<CR>
 
 let mapleader=","
@@ -173,10 +175,12 @@ nnoremap <leader>. :bn<CR>  " next buffer
 nnoremap <leader>, :bp<CR>  " previous buffer
 nnoremap <leader>ev :e $MYVIMRC<CR>  " quick edit .vimrc
 nnoremap <leader>sv :so $MYVIMRC<CR>  " reload .vimrc
+nnoremap <leader>gt :GundoToggle<CR> " toggles Gundo
 " fugitive mappings
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>tt :TagbarToggle<CR>
 
 " set working directory to current file
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
