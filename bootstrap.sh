@@ -5,11 +5,13 @@ git clone https://github.com/SirVer/ultisnips.git
 git clone https://github.com/adoy/vim-php-refactoring-toolbox.git
 git clone https://github.com/airblade/vim-gitgutter.git
 git clone https://github.com/bling/vim-airline.git
+git clone https://github.com/blueyed/vim-diminactive
 git clone https://github.com/chase/vim-ansible-yaml
 git clone https://github.com/christoomey/vim-tmux-navigator.git
 git clone https://github.com/derekprior/vim-trimmer.git
 git clone https://github.com/duggiefresh/vim-easydir.git
 git clone https://github.com/easymotion/vim-easymotion.git
+git clone https://github.com/elzr/vim-json
 git clone https://github.com/godlygeek/tabular.git
 git clone https://github.com/gregsexton/gitv.git
 git clone https://github.com/henrik/vim-qargs.git
@@ -20,6 +22,7 @@ git clone https://github.com/majutsushi/tagbar.git
 git clone https://github.com/mattn/gist-vim.git
 git clone https://github.com/mattn/webapi-vim.git
 git clone https://github.com/moll/vim-node.git
+git clone https://github.com/pangloss/vim-javascript
 git clone https://github.com/pearofducks/ansible-vim.git
 git clone https://github.com/rking/ag.vim.git
 git clone https://github.com/rodjek/vim-puppet.git
