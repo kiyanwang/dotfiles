@@ -238,10 +238,10 @@ let g:ag_prg="ag --vimgrep"
 " CTRL-P
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path_mode = 0
+let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 " make sure ctrlp uses silver searcher (much much faster)
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --ignore=".git" -g ""'
 
 " NERDTREE
 " Make sure NERDTree lists hidden files
