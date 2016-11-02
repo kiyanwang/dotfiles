@@ -308,8 +308,48 @@ nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 " remove all trailing whitespace from the file
 nnoremap ,ws :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
+" closes all buffers that aren't currently visible in
+" window/split/tab
+nnoremap <leader>bc :call CloseAllHiddenBuffers()<CR>
+
+" Appends current date to the open buffer
 function! Today()
   let today = strftime("%A %d\/%m\/%Y")
   exe "normal a". today
 endfunction
 command! Today :call Today()
+
+" Close all buffers that aren't currently being
+" displayed in a window/split/tab
+function! CloseAllHiddenBuffers()
+  " list of *all* buffer numbers
+  let l:buffers = range(1, bufnr('$'))
+
+  " what tab page are we in?
+  let l:currentTab = tabpagenr()
+  try
+    " go through all tab pages
+    let l:tab = 0
+    while l:tab < tabpagenr('$')
+      let l:tab += 1
+
+      " go through all windows
+      let l:win = 0
+      while l:win < winnr('$')
+        let l:win += 1
+        " whatever buffer is in this window in this tab, remove it from
+        " l:buffers list
+        let l:thisbuf = winbufnr(l:win)
+        call remove(l:buffers, index(l:buffers, l:thisbuf))
+      endwhile
+    endwhile
+
+    " if there are any buffers left, delete them
+    if len(l:buffers)
+      execute 'bwipeout' join(l:buffers)
+    endif
+  finally
+    " go back to our original tab page
+    execute 'tabnext' l:currentTab
+  endtry
+endfunction

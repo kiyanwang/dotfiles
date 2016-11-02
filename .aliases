@@ -14,6 +14,9 @@ alias vless="/opt/local/share/vim/vim74/macros/less.sh"
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
+# pretty print json
+alias json='python -m json.tool'
+
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
