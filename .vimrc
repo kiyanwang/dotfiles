@@ -313,6 +313,9 @@ nnoremap ,ws :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " window/split/tab
 nnoremap <leader>bc :call CloseAllHiddenBuffers()<CR>
 
+" search devdocs for term under cursor
+nmap <leader>kk <Plug>(devdocs-under-cursor)
+
 " Appends current date to the open buffer
 function! Today()
   let today = strftime("%A %d\/%m\/%Y")
