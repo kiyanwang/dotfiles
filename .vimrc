@@ -246,6 +246,7 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --ignore=".git" -g ""'
 " NERDTREE
 " Make sure NERDTree lists hidden files
 let g:NERDTreeShowHidden=1
+let g:NERDTreeIgnore=['.git']
 " Use ctrl-n to activate nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
