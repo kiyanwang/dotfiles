@@ -323,12 +323,28 @@ function! Today()
 endfunction
 command! Today :call Today()
 
+func! s:buf_compare(b1, b2) abort
+  let b1_visible = -1 == index(tabpagebuflist(), a:b1)
+  let b2_visible = -1 == index(tabpagebuflist(), a:b2)
+  "prefer loaded and NON-visible buffers
+  if bufloaded(a:b1)
+    if bufloaded(a:b2)
+      return b2_visible ? !b1_visible : -1
+    endif
+    return 0
+  endif
+  return !bufloaded(a:b2) ? 0 : 1
+endf
+
 " Close all buffers that aren't currently being
 " displayed in a window/split/tab
 function! CloseAllHiddenBuffers()
-  " list of *all* buffer numbers
-  let l:buffers = range(1, bufnr('$'))
-
+  " list of *all* buffer numbers including hidden ones
+  let l:buffers = filter(range(1, bufnr('$')),
+              \ 'buflisted(v:val)
+              \  && ("" ==# getbufvar(v:val, "&buftype") || "help" ==# getbufvar(v:val, "&buftype"))
+              \ ')
+  call sort(l:buffers, '<sid>buf_compare')
   " what tab page are we in?
   let l:currentTab = tabpagenr()
   try
