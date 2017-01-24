@@ -94,6 +94,8 @@ export GOOGLER_COLORS=dhdxxy
 # dont store duplicate commands in the history
 export HISTCONTROL=ignoreboth:erasedups
 
+bindkey \^U backward-kill-line
+
 alias ll="ls -alh"
 alias c='pygmentize -O style=monokai,bg=dark -f console256 -g'
 alias applisten="lsof -P -i -n"
