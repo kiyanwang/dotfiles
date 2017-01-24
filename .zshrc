@@ -56,7 +56,7 @@ plugins=(git, colorize)
 
 # User configuration
 
-export PATH="/Users/nadeemshabir/.rvm/gems/ruby-1.9.3-p448/bin:/Users/nadeemshabir/.rvm/gems/ruby-1.9.3-p448@global/bin:/Users/nadeemshabir/.rvm/rubies/ruby-1.9.3-p448/bin:/Users/nadeemshabir/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$PATH:/Users/nadeemshabir/.rvm/gems/ruby-1.9.3-p448/bin:/Users/nadeemshabir/.rvm/gems/ruby-1.9.3-p448@global/bin:/Users/nadeemshabir/.rvm/rubies/ruby-1.9.3-p448/bin:/Users/nadeemshabir/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH="/opt/local/bin:/opt/local/sbin:/opt/puppetlabs/bin:/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:/Users/nadeemshabir/Development/dasht/bin:/Users/nadeemshabir/Development/projects/go/bin:$PATH"
 
@@ -90,6 +90,9 @@ export EDITOR=vim
 setopt AUTO_CD
 
 export GOOGLER_COLORS=dhdxxy
+
+# dont store duplicate commands in the history
+export HISTCONTROL=ignoreboth:erasedups
 
 alias ll="ls -alh"
 alias c='pygmentize -O style=monokai,bg=dark -f console256 -g'
