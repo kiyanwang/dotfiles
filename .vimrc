@@ -274,6 +274,9 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
+" TASK-WARRIOR
+let g:task_rs_override='rc.defaultwidth=0 rc.defaultheight=0'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Custom Mappings / Shortcuts etc.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
