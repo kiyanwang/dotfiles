@@ -12,6 +12,7 @@ git clone https://github.com/derekprior/vim-trimmer.git
 git clone https://github.com/duggiefresh/vim-easydir.git
 git clone https://github.com/easymotion/vim-easymotion.git
 git clone https://github.com/elzr/vim-json
+git clone https://github.com/farseer90718/vim-taskwarrior
 git clone https://github.com/godlygeek/tabular.git
 git clone https://github.com/gregsexton/gitv.git
 git clone https://github.com/henrik/vim-qargs.git
