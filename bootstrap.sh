@@ -34,6 +34,7 @@ git clone https://github.com/scrooloose/nerdtree.git
 git clone https://github.com/scrooloose/syntastic.git
 git clone https://github.com/sjl/gundo.vim.git
 git clone https://github.com/terryma/vim-multiple-cursors.git
+git clone https://github.com/thaerkh/vim-workspace.git
 git clone https://github.com/tpope/vim-abolish.git
 git clone https://github.com/tpope/vim-fugitive.git
 git clone https://github.com/tpope/vim-surround.git
