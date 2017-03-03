@@ -54,6 +54,8 @@ alias histgrep="history | grep"
 # find out my public ip address
 alias whatsmyip="curl http://ipecho.net/plain; echo"
 
+alias dirs="dirs -vl"
+
 # generate phpctags for the current directory and its subdirs
 # the function takes 2 args, the first is the name of the file the tags should be stored in
 # the second is the directory to exclude
