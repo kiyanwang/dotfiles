@@ -39,3 +39,5 @@ git clone https://github.com/tpope/vim-abolish.git
 git clone https://github.com/tpope/vim-fugitive.git
 git clone https://github.com/tpope/vim-surround.git
 git clone https://github.com/vitalk/vim-simple-todo
+
+git clone https://github.com/lifepillar/vim-solarized8.git ~/.vim/pack/themes/opt/solarized8

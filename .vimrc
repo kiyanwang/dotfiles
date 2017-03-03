@@ -55,7 +55,7 @@ set pastetoggle=<F2>
 set t_Co=256
 
 " use solarized dark theme
-colorscheme solarized
+colorscheme solarized8_dark
 set background=dark
 
 " Always use powerline font in MacVim
