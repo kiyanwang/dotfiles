@@ -1,5 +1,6 @@
 {
   "InitialFilter": "Regexp",
+  "StickySelection": true,
   "Style": {
     "Basic": ["on_default", "default"],
     "SavedSelection": ["bold", "on_yellow", "white"],
