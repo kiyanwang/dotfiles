@@ -1,0 +1,10 @@
+{
+  "InitialFilter": "Regexp",
+  "Style": {
+    "Basic": ["on_default", "default"],
+    "SavedSelection": ["bold", "on_yellow", "white"],
+    "Selected": ["underline", "on_yellow", "white"],
+    "Query": ["yellow", "bold"],
+    "Matched": ["red", "on_white"]
+  }
+}
