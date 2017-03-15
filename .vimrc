@@ -319,6 +319,17 @@ nnoremap <leader>bc :call CloseAllHiddenBuffers()<CR>
 " search devdocs for term under cursor
 nmap <leader>kk <Plug>(devdocs-under-cursor)
 
+" Move a line of text using ALT+[jk]
+" or a selected block of text
+" in OSX cant map the ALT key so used this
+" workaround: http://stackoverflow.com/questions/7501092/can-i-map-alt-key-in-vim
+nnoremap ∆ :m .+1<CR>==
+nnoremap ˚ :m .-2<CR>==
+inoremap ∆ <Esc>:m .+1<CR>==gi
+inoremap ˚ <Esc>:m .-2<CR>==gi
+vnoremap ∆ :m '>+1<CR>gv=gv
+vnoremap ˚ :m '<-2<CR>gv=gv
+
 " Appends current date to the open buffer
 function! Today()
   let today = strftime("%A %d\/%m\/%Y")
