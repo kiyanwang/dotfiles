@@ -3,9 +3,9 @@
   "StickySelection": true,
   "Style": {
     "Basic": ["on_default", "default"],
-    "SavedSelection": ["bold", "on_yellow", "white"],
-    "Selected": ["underline", "on_yellow", "white"],
-    "Query": ["yellow", "bold"],
-    "Matched": ["red", "on_white"]
+    "SavedSelection": ["bold", "on_green", "white"],
+    "Selected": [ "on_blue", "white"],
+    "Query": ["green", "bold"],
+    "Matched": ["green", "on_black"]
   }
 }
