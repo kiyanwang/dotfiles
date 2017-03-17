@@ -61,7 +61,7 @@ alias dirs="dirs -vl"
 alias server_here="python -m SimpleHTTPServer 8000"
 
 # find all files in current dir/and subdirs modified in the last day
-alias recently_modified="find . -type f -mtime -1 './.git/*'"
+alias recently_modified="find . -type f -mtime -1 -not -path './.git/*'"
 
 # generate phpctags for the current directory and its subdirs
 # the function takes 2 args, the first is the name of the file the tags should be stored in
