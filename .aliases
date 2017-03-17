@@ -54,7 +54,11 @@ alias histgrep="history | grep"
 # find out my public ip address
 alias whatsmyip="curl http://ipecho.net/plain; echo"
 
+# configure directory stack listing
 alias dirs="dirs -vl"
+
+# start a simple http server in current folder
+alias server_here="python -m SimpleHTTPServer 8000"
 
 # generate phpctags for the current directory and its subdirs
 # the function takes 2 args, the first is the name of the file the tags should be stored in
