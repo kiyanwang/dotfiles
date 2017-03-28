@@ -54,6 +54,10 @@ set pastetoggle=<F2>
 " enable 256 color support
 set t_Co=256
 
+if (has("termguicolors"))
+  set termguicolors
+endif
+
 " use solarized dark theme
 colorscheme solarized8_dark
 set background=dark
