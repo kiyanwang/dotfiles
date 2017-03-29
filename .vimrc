@@ -312,6 +312,9 @@ nnoremap <leader>gb :Gbrowse<CR>
 " Toggle the tagbar view
 nnoremap <leader>tt :TagbarToggle<CR>
 
+" Force the filetype to ansible manually
+nnoremap <leader>fa :set filetype=ansible<CR>
+
 " set working directory to current file
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 " remove all trailing whitespace from the file
