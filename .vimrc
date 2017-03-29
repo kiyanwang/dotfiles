@@ -59,7 +59,8 @@ if (has("termguicolors"))
 endif
 
 " use solarized dark theme
-colorscheme solarized8_dark
+" colorscheme solarized8_dark
+colorscheme spacemacs-theme
 set background=dark
 
 " Always use powerline font in MacVim
@@ -232,7 +233,7 @@ map <Leader>k <Plug>(easymotion-k)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " AIRLINE STATUS LINE
-let g:airline_theme='solarized'
+let g:airline_theme='base16_spacemacs'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
