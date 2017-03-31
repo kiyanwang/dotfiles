@@ -327,6 +327,10 @@ nnoremap <leader>bc :call CloseAllHiddenBuffers()<CR>
 " search devdocs for term under cursor
 nmap <leader>kk <Plug>(devdocs-under-cursor)
 
+" prompts for an input which is used to replace all
+" occurances of the current word
+nmap <leader>r :call Replace()<CR>
+
 " Move a line of text using ALT+[jk]
 " or a selected block of text
 " in OSX cant map the ALT key so used this
@@ -395,3 +399,10 @@ function! CloseAllHiddenBuffers()
     execute 'tabnext' l:currentTab
   endtry
 endfunction
+
+" Search for <cword> and replace with input()
+function! Replace()
+    let s:word = input("Replace " . expand('<cword>') . " with:")
+    :exe '%s/\<' . expand('<cword>') . '\>/' . s:word . '/ge'
+    :unlet! s:word
+endfun
