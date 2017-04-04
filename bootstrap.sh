@@ -28,6 +28,7 @@ git clone https://github.com/moll/vim-node.git
 git clone https://github.com/pangloss/vim-javascript
 git clone https://github.com/pearofducks/ansible-vim.git
 git clone https://github.com/rking/ag.vim.git
+git clone https://github.com/robbles/logstash.vim.git
 git clone https://github.com/rodjek/vim-puppet.git
 git clone https://github.com/scrooloose/nerdcommenter.git
 git clone https://github.com/scrooloose/nerdtree.git
@@ -39,5 +40,4 @@ git clone https://github.com/tpope/vim-abolish.git
 git clone https://github.com/tpope/vim-fugitive.git
 git clone https://github.com/tpope/vim-surround.git
 git clone https://github.com/vitalk/vim-simple-todo
-
 git clone https://github.com/lifepillar/vim-solarized8.git ~/.vim/pack/themes/opt/solarized8
