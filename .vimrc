@@ -3,7 +3,7 @@
 " Source: https://github.com/kiyanwang/dotfiles/.vimrc
 " Installed plugins: see bootstraph.sh which needs to be run
 "    at the moment this uses Pathogen, will probably change
-"    this some point
+"    this some point.
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
