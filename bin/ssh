@@ -18,7 +18,7 @@
 # Github: kiyanwang
 
 iterm2_set_user_var () {
-	printf "\033]1337;SetUserVar=%s=%s\007" "$1" $(printf "%s" "$2" | base64 | tr -d '\n')
+  printf "\033]1337;SetUserVar=%s=%s\007" "$1" $(printf "%s" "$2" | base64 | tr -d '\n')
 }
 
 change_profile () {
