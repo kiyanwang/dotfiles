@@ -136,3 +136,5 @@ if which peco &> /dev/null; then
   zle -N peco_select_history
   bindkey '^x^s' peco_select_history
 fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
