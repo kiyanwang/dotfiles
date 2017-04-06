@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Simple script that switches your iTerm2 Profile when using ssh.
+# You'll need to export three environment variables:
+# - SSH_DEFAULT_THEME
+# - SSH_DANGER_THEME
+# - SSH_WARNING_THEME
+#
+# The values for these must correspond exactly to the name of an iTerm Profile you have
+# created. Within the Profile you can set the color/themes you wish to use.
+#
+# The script parses the hostname out of the ssh connection string (naive) and
+# uses this in a case statement to set the theme. Add as many cases as you like.
+#
+# To use this either put this script or a symlink to it into /usr/local/bin
+#
+# author: ns@talis.com
+# Github: kiyanwang
+
+change_profile () {
+  NAME=$1; if [ -z "$NAME" ]; then NAME="$SSH_DEFAULT_THEME"; fi
+  #echo "Setting theme to $NAME"
+  echo -e "\033]50;SetProfile=$NAME\a"
+}
+
+on_exit () {
+  change_profile
+}
+trap on_exit EXIT
+
+
+HOSTNAME=`echo $@ | sed s/.*@//`
+echo "Connecting to $HOSTNAME"
+
+case $HOSTNAME in
+  ec2-*) change_profile "$SSH_WARNING_THEME" ;;
+esac
+
+/usr/bin/ssh "$@"
