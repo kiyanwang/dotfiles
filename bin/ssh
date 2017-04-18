@@ -11,6 +11,11 @@
 #
 # The script parses the hostname out of the ssh connection string (naive) and
 # uses this in a case statement to set the theme. Add as many cases as you like.
+# 
+# I've updated this recently to take advantage of iTerm's Badges feature to watermark 
+# my terminal session with the hostname. That way I can always tell what each session is
+# connected to. For this to work you I've inlined the iterm2_set_user_var function from 
+# the iterm shell integrations collection of tools.
 #
 # To use this either put this script or a symlink to it into /usr/local/bin
 #
