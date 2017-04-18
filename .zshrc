@@ -89,6 +89,7 @@ export LANG=en_US.UTF-8
 export EDITOR=vim
 setopt AUTO_CD
 
+export DEFAULT_THEME="Spacemacs"
 export SSH_DEFAULT_THEME="Spacemacs"
 export SSH_DANGER_THEME="Production"
 export SSH_WARNING_THEME="Staging"

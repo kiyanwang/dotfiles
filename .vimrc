@@ -282,6 +282,9 @@ let g:multi_cursor_quit_key='<Esc>'
 " TASK-WARRIOR
 let g:task_rc_override='rc.defaultwidth=160 rc.defaultheight=0'
 
+" DEV-ICONS
+let g:WebDevIconsOS = 'Darwin'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Custom Mappings / Shortcuts etc.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
