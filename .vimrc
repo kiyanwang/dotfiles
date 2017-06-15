@@ -141,6 +141,9 @@ if $TMUX == ''
   set clipboard+=unnamed
 endif
 
+" Automatically equalise splits when vim is resized
+autocmd VimResized * wincmd =
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indents
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
