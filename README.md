@@ -1,7 +1,13 @@
-shell-config
+Dotfiles
 ============
 
-my shell and other tool configs such as for git.
+My shell and other tool configs, currently includes:
 
-* copy git-meld to /usr/bin ( or anywhere on your path ) also make sure this file is executable.
-      (alternatively you can just use  the git difftool command )
+* (neo)vim
+* tmux
+* git
+* .zshrc
+* peco
+
+
+
