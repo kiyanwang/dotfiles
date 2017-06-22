@@ -272,6 +272,9 @@ let g:UltiSnipsListSnippets="<c-l>"
 " SYNTASTIC
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
+" eslint should be installed local to the project along with
+" any plugins that are needed
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_puppet_puppetlint_args = "--no-80chars-check"
