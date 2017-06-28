@@ -296,10 +296,10 @@ let g:WebDevIconsOS = 'Darwin'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " integration with the boxes utility
 " ( installed via port install boxes )
-vmap ,mc !boxes -d shell -s 80 -a c<CR>
-nmap ,mc !!boxes -d shell -s 80 -a c <CR>
-vmap ,xc !boxes -d shell -r<CR>
-nmap ,xc !!boxes -d shell -r<CR>
+vmap <leader>mc !boxes -d shell -s 80 -a c<CR>
+nmap <leader>mc !!boxes -d shell -s 80 -a c <CR>
+vmap <leader>xc !boxes -d shell -r<CR>
+nmap <leader>xc !!boxes -d shell -r<CR>
 
 " stop highlighting a search
 nnoremap <leader><space> :nohlsearch<CR>
@@ -325,9 +325,9 @@ nnoremap <leader>tt :TagbarToggle<CR>
 nnoremap <leader>fa :set filetype=ansible<CR>
 
 " set working directory to current file
-nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 " remove all trailing whitespace from the file
-nnoremap ,ws :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap <leader>ws :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " closes all buffers that aren't currently visible in
 " window/split/tab
