@@ -317,6 +317,7 @@ nnoremap <leader>gt :GundoToggle<CR> " toggles Gundo
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gb :Gbrowse<CR>
+nnoremap <leader>gpu :Gpush<CR>
 
 " Toggle the tagbar view
 nnoremap <leader>tt :TagbarToggle<CR>
