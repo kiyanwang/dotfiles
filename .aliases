@@ -63,6 +63,8 @@ alias server_here="python -m SimpleHTTPServer 8000"
 # find all files in current dir/and subdirs modified in the last day
 alias recently_modified="find . -type f -mtime -1 -not -path './.git/*'"
 
+alias prependtext="pbpaste | sed -e 's/^/  /' | pbcopy"
+
 # aliases for quickly setting theme/badges for my local environment
 alias t_reset="/usr/local/bin/switch-iterm-theme"
 alias t_remote_mongo="/usr/local/bin/switch-iterm-theme -t=Danger -b=mongo"
