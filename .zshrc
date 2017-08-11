@@ -109,6 +109,11 @@ alias vless="/opt/local/share/vim/vim74/macros/less.sh"
 source ~/.aliases
 source ~/.server_aliases
 
+# LESS with syntax highlighting
+LESSPIPE=`which src-hilite-lesspipe.sh`
+export LESSOPEN="| ${LESSPIPE} %s"
+export LESS=' -R -X -F '
+
 autoload -U compinit && compinit
 autoload -U bashcompinit && bashcompinit
 
@@ -139,3 +144,5 @@ if which peco &> /dev/null; then
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
