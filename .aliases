@@ -17,6 +17,12 @@ alias sudo='sudo '
 # pretty print json
 alias json='python -m json.tool'
 
+# trim new lines and copy to clipboard
+alias t="tr -d '\n' | pbcopy"
+
+# Lock the screen (when going afk)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
