@@ -22,6 +22,13 @@
 # author: ns@talis.com
 # Github: kiyanwang
 
+containsElement () {
+  local e match="$1"
+  shift
+  for e; do [[ "$e" == "$match" ]] && return 0; done
+  return 1
+}
+
 iterm2_set_user_var () {
   printf "\033]1337;SetUserVar=%s=%s\007" "$1" $(printf "%s" "$2" | base64 | tr -d '\n')
 }
@@ -39,18 +46,28 @@ on_exit () {
 }
 trap on_exit EXIT
 
+source ~/.aliases # awslookup is defined here
 
 HOSTNAME=`echo $@ | sed s/.*@//`
-echo "Connecting to $HOSTNAME"
+PRODUCTION_EC2_HOSTS=(`awslookup production '*' text | awk -F'\t' '{ print $2 }'`)
+STAGING_EC2_HOSTS=(`awslookup staging '*' text | awk -F'\t' '{ print $2 }'`)
 
-case $HOSTNAME in
-  *.talisaspire.com) change_profile "$SSH_DANGER_THEME" ;;
-  *.talis.com) change_profile "$SSH_DANGER_THEME" ;;
-  95.138.*) change_profile "$SSH_DANGER_THEME" ;;
-  54.195.247.168) change_profile "$SSH_DANGER_THEME" ;;
-  192.168.*) change_profile "$SSH_DANGER_THEME" ;;
-  95.138.*) change_profile "$SSH_DANGER_THEME" ;;
-  ec2-*) change_profile "$SSH_WARNING_THEME" ;;
-esac
+if containsElement "$HOSTNAME" "${PRODUCTION_EC2_HOSTS[@]}"; then
+  change_profile "$SSH_DANGER_THEME"
+elif containsElement "$HOSTNAME" "${STAGING_EC2_HOSTS[@]}"; then
+  change_profile "$SSH_WARNING_THEME"
+else
+  case $HOSTNAME in
+    *.talisaspire.com) change_profile "$SSH_DANGER_THEME" ;;
+    *.talis.com) change_profile "$SSH_DANGER_THEME" ;;
+    95.138.*) change_profile "$SSH_DANGER_THEME" ;;
+    54.195.247.168) change_profile "$SSH_DANGER_THEME" ;;
+    192.168.*) change_profile "$SSH_DANGER_THEME" ;;
+    95.138.*) change_profile "$SSH_DANGER_THEME" ;;
+#    ec2-*) change_profile "$SSH_WARNING_THEME" ;;
+  esac
+fi
+
+echo "Connecting to $HOSTNAME"
 
 /usr/bin/ssh "$@"
