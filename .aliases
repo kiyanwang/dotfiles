@@ -89,12 +89,13 @@ alias phptags=createtags
 # uses aws cli to lookup instances based on a filter on the Name tag
 # $1 is the profile to use
 # $2 is the filter to use
-# $3 is optional, the value doesn't matter but if passed in will result
+# $3 is the output format defaults to 'table'
+# $4 is optional, the value doesn't matter but if passed in will result
 #    in this function printing out the raw command its about to run
 #    for debugging purposes
 awslookup() {
-  cmd="aws --profile $1 ec2 describe-instances --filters \"Name=tag:Name,Values=$2\" --query 'Reservations[].Instances[].[InstanceId,PublicDnsName,State.Name,InstanceType,join(\`,\`,Tags[?Key==\`Name\`].Value)]' --output table"
-  if [ $# -eq 3 ]
+  cmd="aws --profile $1 ec2 describe-instances --filters \"Name=tag:Name,Values=$2\" --query 'Reservations[].Instances[].[InstanceId,PublicDnsName,State.Name,InstanceType,join(\`,\`,Tags[?Key==\`Name\`].Value)]' --output ${3:-table}"
+  if [ $# -eq 4 ]
   then
     echo "Running $cmd"
   fi
