@@ -64,6 +64,7 @@ else
     54.195.247.168) change_profile "$SSH_DANGER_THEME" ;;
     192.168.*) change_profile "$SSH_DANGER_THEME" ;;
     95.138.*) change_profile "$SSH_DANGER_THEME" ;;
+    83.138.*) change_profile "$SSH_DANGER_THEME" ;;
 #    ec2-*) change_profile "$SSH_WARNING_THEME" ;;
   esac
 fi
