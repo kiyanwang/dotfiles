@@ -286,7 +286,9 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 " TASK-WARRIOR
-let g:task_rc_override='rc.defaultwidth=160 rc.defaultheight=0'
+let g:task_rc_override='rc.defaultwidth=180'
+let g:task_default_prompt=['due', 'project', 'priority', 'description', 'mystatus', 'tag', 'depends']
+
 
 " DEV-ICONS
 let g:WebDevIconsOS = 'Darwin'
@@ -358,6 +360,9 @@ function! Today()
   exe "normal a". today
 endfunction
 command! Today :call Today()
+
+
+map <leader>f :Ranger<CR>
 
 func! s:buf_compare(b1, b2) abort
   let b1_visible = -1 == index(tabpagebuflist(), a:b1)

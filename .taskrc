@@ -1,0 +1,58 @@
+# [Created by task 2.4.4 10/15/2015 07:28:15]
+# Taskwarrior program configuration file.
+# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
+# 'man task-sync' or 'man taskrc'
+
+# Here is an example of entries that use the default, override and blank values
+#   variable=foo   -- By specifying a value, this overrides the default
+#   variable=      -- By specifying no value, this means no default
+#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
+
+# Use the command 'task show' to see all defaults and overrides
+
+# Files
+data.location=~/.task
+
+# Color theme (uncomment one to use)
+#include /opt/local/share/doc/task/rc/light-16.theme
+#include /opt/local/share/doc/task/rc/light-256.theme
+#include /opt/local/share/doc/task/rc/dark-16.theme
+#include /opt/local/share/doc/task/rc/dark-256.theme
+#include /opt/local/share/doc/task/rc/dark-red-256.theme
+#include /opt/local/share/doc/task/rc/dark-green-256.theme
+#include /opt/local/share/doc/task/rc/dark-blue-256.theme
+include /opt/local/share/doc/task/rc/dark-violets-256.theme
+#include /opt/local/share/doc/task/rc/dark-yellow-green.theme
+#include /opt/local/share/doc/task/rc/dark-gray-256.theme
+#include /opt/local/share/doc/task/rc/dark-gray-blue-256.theme
+#include /opt/local/share/doc/task/rc/solarized-dark-256.theme
+#include /opt/local/share/doc/task/rc/solarized-light-256.theme
+#include /opt/local/share/doc/task/rc/no-color.theme
+
+# config
+color=on
+defaultwidth=50
+defaultheight=50
+curses=on
+editor=nvim
+confirmation=off
+complete.all.projects=yes
+list.all.projects=yes
+list.all.tags=yes
+
+# reports
+uda.estimate.type=numeric
+uda.estimate.label=Est
+report.simple.description=Simple list of open tasks by project
+report.simple.columns=id,entry,description.count
+report.simple.labels=ID,Proj,Desc
+report.simple.sort=project+\/,entry+
+report.simple.filter=status:pending
+uda.mystatus.type=string
+uda.mystatus.label=Stat
+uda.mystatus.values=PENDING,IN_PROGRESS,IN_REVIEW,ON_HOLD,COMPLETED
+report.next.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,mystatus,description,urgency
+report.next.description=Most urgent tasks
+report.next.filter=status:pending limit:page
+report.next.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Status,Description,Urg
+report.next.sort=urgency-
