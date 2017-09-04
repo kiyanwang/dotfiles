@@ -296,7 +296,11 @@ let g:WebDevIconsOS = 'Darwin'
 " STARTIFY
 let g:startify_custom_header = []
 let g:startify_files_number = 5
-
+let g:startify_skiplist = [
+  \ 'COMMIT_EDITMSG',
+  \ '.git/*',
+  \ '/opt/local/share/nvim/runtime/doc/*',
+  \ ]
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Custom Mappings / Shortcuts etc.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
