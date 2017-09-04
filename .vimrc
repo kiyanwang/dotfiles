@@ -11,6 +11,9 @@
 " how many lines of history VIM should remember
 set history=500
 
+" save information about files I open
+set viminfo='100,n$HOME/.vim/files/info/viminfo
+
 " turn of filetype while i load pathogen then
 " reactivate it
 filetype off
@@ -296,9 +299,11 @@ let g:WebDevIconsOS = 'Darwin'
 " STARTIFY
 let g:startify_custom_header = []
 let g:startify_files_number = 5
+let g:startify_change_to_dir = 1
+let g:startify_session_autoload = 1
 let g:startify_skiplist = [
   \ 'COMMIT_EDITMSG',
-  \ '.git/*',
+  \ '\.git/*',
   \ '/opt/local/share/nvim/runtime/doc/*',
   \ ]
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
