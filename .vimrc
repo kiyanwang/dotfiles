@@ -297,10 +297,17 @@ let g:task_default_prompt=['due', 'project', 'priority', 'description', 'mystatu
 let g:WebDevIconsOS = 'Darwin'
 
 " STARTIFY
-let g:startify_custom_header = []
+let g:startify_custom_header = [
+  \ ' ██████╗ ██╗  ██╗██╗██╗   ██╗ █████╗ ███╗   ██╗██╗    ██╗ █████╗ ███╗   ██╗ ██████╗ ',
+  \ '██╔═══██╗██║ ██╔╝██║╚██╗ ██╔╝██╔══██╗████╗  ██║██║    ██║██╔══██╗████╗  ██║██╔════╝ ',
+  \ '██║██╗██║█████╔╝ ██║ ╚████╔╝ ███████║██╔██╗ ██║██║ █╗ ██║███████║██╔██╗ ██║██║  ███╗',
+  \ '██║██║██║██╔═██╗ ██║  ╚██╔╝  ██╔══██║██║╚██╗██║██║███╗██║██╔══██║██║╚██╗██║██║   ██║',
+  \ '╚█║████╔╝██║  ██╗██║   ██║   ██║  ██║██║ ╚████║╚███╔███╔╝██║  ██║██║ ╚████║╚██████╔╝',
+  \ ' ╚╝╚═══╝ ╚═╝  ╚═╝╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ',
+  \ ]
 let g:startify_files_number = 5
-let g:startify_change_to_dir = 1
 let g:startify_session_autoload = 1
+let g:startify_session_persistence = 1
 let g:startify_skiplist = [
   \ 'COMMIT_EDITMSG',
   \ '\.git/*',
