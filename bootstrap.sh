@@ -1,5 +1,4 @@
 #!/bin/bash
-
 cd ~/.vim/bundle
 git clone https://github.com/MattesGroeger/vim-bookmarks.git
 git clone https://github.com/SirVer/ultisnips.git
@@ -13,6 +12,7 @@ git clone https://github.com/christoomey/vim-tmux-navigator.git
 git clone https://github.com/derekprior/vim-trimmer.git
 git clone https://github.com/duggiefresh/vim-easydir.git
 git clone https://github.com/easymotion/vim-easymotion.git
+git clone https://github.com/ekalinin/Dockerfile.vim.git
 git clone https://github.com/elzr/vim-json
 git clone https://github.com/farseer90718/vim-taskwarrior
 git clone https://github.com/godlygeek/tabular.git
@@ -25,6 +25,7 @@ git clone https://github.com/lifepillar/vim-solarized8.git ~/.vim/pack/themes/op
 git clone https://github.com/majutsushi/tagbar.git
 git clone https://github.com/mattn/gist-vim.git
 git clone https://github.com/mattn/webapi-vim.git
+git clone https://github.com/mhinz/vim-startify.git
 git clone https://github.com/moll/vim-node.git
 git clone https://github.com/mtscout6/syntastic-local-eslint.vim.git
 git clone https://github.com/pangloss/vim-javascript
@@ -42,3 +43,4 @@ git clone https://github.com/tpope/vim-abolish.git
 git clone https://github.com/tpope/vim-fugitive.git
 git clone https://github.com/tpope/vim-surround.git
 git clone https://github.com/vitalk/vim-simple-todo
+git clone https://github.com/yssl/QFEnter.git

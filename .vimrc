@@ -293,6 +293,10 @@ let g:task_default_prompt=['due', 'project', 'priority', 'description', 'mystatu
 " DEV-ICONS
 let g:WebDevIconsOS = 'Darwin'
 
+" STARTIFY
+let g:startify_custom_header = []
+let g:startify_files_number = 5
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Custom Mappings / Shortcuts etc.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
