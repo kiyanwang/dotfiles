@@ -1,0 +1,39 @@
+# Example bugwarriorrc
+
+# General stuff.
+[general]
+targets = my_github
+
+inline_links = False
+
+annotation_links = True
+
+annotation_comments = False
+
+legacy_matching = False
+
+log.level = DEBUG
+
+log.file = /tmp/bugwarrior.log
+
+annotation_length = 160
+
+[my_github]
+service = github
+github.username = <GIT_HUB ORG>
+github.login = <GITHUB_USERNAME>
+github.token = <GITHUB_TOKEN>
+github.default_priority = H
+github.add_tags =_{{ githubmilestone | title }}
+github.include_repos = platform
+github.exclude_repos = infra,babel-server
+github.import_labels_as_tags = True
+github.involved_issues = False
+github.include_user_issues = False
+github.include_user_repos = False
+github.query = is:open is:issue assignee:kiyanwang repo:talis/platform
+github.description_template ={{githubrepo | replace("talis/","") | upper}}-{{githubnumber}}: {{githubtitle}}
+github.project_template ={{project|upper}}
+github.import_labels_as_tags = True
+github.label_template ={{label|replace("component__", "")|replace("priority__high", "")|replace("priority__medium", "")|replace("priority__low", "")|replace("type__", "")|replace("service__", "")|replace("task","") | trim}}
+
