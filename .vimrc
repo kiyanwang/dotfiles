@@ -315,7 +315,7 @@ let g:startify_skiplist = [
   \ '/opt/local/share/nvim/runtime/doc/*',
   \ ]
 let g:startify_commands = [
-  \ ':TW',
+  \ {'t': ['Tasks', ':TW']},
   \ ]
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Custom Mappings / Shortcuts etc.
