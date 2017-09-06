@@ -291,6 +291,7 @@ let g:multi_cursor_quit_key='<Esc>'
 " TASK-WARRIOR
 let g:task_rc_override='rc.defaultwidth=180'
 let g:task_default_prompt=['due', 'project', 'priority', 'description', 'mystatus', 'tag', 'depends']
+let g:task_readonly = 0
 
 
 " DEV-ICONS
@@ -312,6 +313,9 @@ let g:startify_skiplist = [
   \ 'COMMIT_EDITMSG',
   \ '\.git/*',
   \ '/opt/local/share/nvim/runtime/doc/*',
+  \ ]
+let g:startify_commands = [
+  \ ':TW',
   \ ]
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Custom Mappings / Shortcuts etc.
