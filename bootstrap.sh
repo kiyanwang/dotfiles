@@ -17,6 +17,7 @@ git clone https://github.com/elzr/vim-json
 git clone https://github.com/farseer90718/vim-taskwarrior
 git clone https://github.com/godlygeek/tabular.git
 git clone https://github.com/gregsexton/gitv.git
+git clone https://github.com/heavenshell/vim-jsdoc
 git clone https://github.com/henrik/vim-qargs.git
 git clone https://github.com/honza/vim-snippets.git
 git clone https://github.com/kchmck/vim-coffee-script.git
