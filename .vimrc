@@ -293,6 +293,9 @@ let g:task_rc_override='rc.defaultwidth=180'
 let g:task_default_prompt=['due', 'project', 'priority', 'description', 'mystatus', 'tag', 'depends']
 let g:task_readonly = 0
 
+" JS-DOC
+let g:jsdoc_allow_input_prompt = 1
+
 
 " DEV-ICONS
 let g:WebDevIconsOS = 'Darwin'

@@ -32,7 +32,7 @@ include /opt/local/share/doc/task/rc/dark-violets-256.theme
 # config
 color=on
 defaultwidth=50
-defaultheight=50
+defaultheight=100
 curses=on
 editor=nvim
 confirmation=off
@@ -51,10 +51,10 @@ report.simple.filter=status:pending
 uda.mystatus.type=string
 uda.mystatus.label=Stat
 uda.mystatus.values=PENDING,IN_PROGRESS,IN_REVIEW,ON_HOLD,COMPLETED
-report.next.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due,until.remaining,mystatus,description,urgency
+report.next.columns=id,depends,priority,project,tags,recur,scheduled.countdown,due,until.remaining,mystatus,description,urgency
 report.next.description=Most urgent tasks
 report.next.filter=status:pending limit:page
-report.next.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Status,Description,Urg
+report.next.labels=ID,Deps,P,Project,Tag,Recur,S,Due,Until,Status,Description,Urg
 report.next.sort=urgency-
 journal.time=on
 dateformat.annotation=Y\/M\/D H:N
