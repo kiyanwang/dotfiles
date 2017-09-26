@@ -1,9 +1,2 @@
 #!/bin/bash
-
-cd ~/.vim/bundle
-for i in `ls`; do
-  echo "$i"
-  cd "$i"
-  git pull
-  cd ..
-done
+find ~/.vim/bundle -mindepth 1 -maxdepth 1 -type d -exec sh -c 'cd {}; git pull' \;
