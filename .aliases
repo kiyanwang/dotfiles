@@ -77,7 +77,9 @@ alias t_remote_mongo="/usr/local/bin/switch-iterm-theme -t=Danger -b=mongo"
 alias t_local_vagrant="/usr/local/bin/switch-iterm-theme -t=Vagrant -b=vagrant"
 
 # use fzf with highlight to preview files in command line
-alias fp="fzf --preview '(highlight -O ansi -l {} || head -100 {})'"
+alias fp="fzf --preview '(highlight -O ansi -l {})' --bind ctrl-j:preview-page-down,ctrl-k:preview-page-up"
+alias fpp="fzf --preview '(highlight -O ansi -l {} || head -n 100)'"
+
 
 # generate phpctags for the current directory and its subdirs
 # the function takes 2 args, the first is the name of the file the tags should be stored in
