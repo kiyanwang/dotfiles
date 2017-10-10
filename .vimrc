@@ -278,9 +278,15 @@ let g:UltiSnipsListSnippets="<c-l>"
 " eslint should be installed local to the project along with
 " any plugins that are needed
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_puppet_puppetlint_args = "--no-80chars-check"
+
+" Point syntastic checker at locally installed `standard` if it exists.
+if executable('node_modules/.bin/tslint')
+  let g:syntastic_typescript_tslint_exec = 'node_modules/.bin/tslint'
+endif
 
 " MULTIPLE CURSORS
 let g:multi_cursor_next_key='<C-m>'
