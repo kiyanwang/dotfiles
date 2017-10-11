@@ -394,8 +394,11 @@ function! Today()
 endfunction
 command! Today :call Today()
 
-
+" launch ranger
 map <leader>f :Ranger<CR>
+
+" Show current buffer in NerdTree
+map <leader>ff :NERDTreeFind<CR>
 
 func! s:buf_compare(b1, b2) abort
   let b1_visible = -1 == index(tabpagebuflist(), a:b1)
