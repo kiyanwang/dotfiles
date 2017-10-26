@@ -81,7 +81,7 @@ alias fp="fzf --preview '(highlight -O ansi -l {})' --bind ctrl-j:preview-page-d
 alias fpp="fzf --preview '(highlight -O ansi -l {} || head -n 100)'"
 
 # quickly jump back up to the top of your git project
-alias gcd="cd $(git rev-parse --show-toplevel)"
+alias gcd='cd "$(git rev-parse --show-toplevel)"'
 
 # generate phpctags for the current directory and its subdirs
 # the function takes 2 args, the first is the name of the file the tags should be stored in
