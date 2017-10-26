@@ -394,9 +394,6 @@ function! Today()
 endfunction
 command! Today :call Today()
 
-" launch ranger
-map <leader>f :Ranger<CR>
-
 " Show current buffer in NerdTree
 map <leader>ff :NERDTreeFind<CR>
 

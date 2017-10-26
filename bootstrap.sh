@@ -25,7 +25,6 @@ git clone https://github.com/kien/ctrlp.vim.git
 git clone https://github.com/lifepillar/vim-solarized8.git ~/.vim/pack/themes/opt/solarized8
 git clone https://github.com/majutsushi/tagbar.git
 git clone https://github.com/mattn/gist-vim.git
-git clone https://github.com/mattn/webapi-vim.git
 git clone https://github.com/mhinz/vim-startify.git
 git clone https://github.com/moll/vim-node.git
 git clone https://github.com/mtscout6/syntastic-local-eslint.vim.git
@@ -43,5 +42,4 @@ git clone https://github.com/thaerkh/vim-workspace.git
 git clone https://github.com/tpope/vim-abolish.git
 git clone https://github.com/tpope/vim-fugitive.git
 git clone https://github.com/tpope/vim-surround.git
-git clone https://github.com/vitalk/vim-simple-todo
 git clone https://github.com/yssl/QFEnter.git
