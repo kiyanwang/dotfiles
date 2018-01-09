@@ -49,7 +49,7 @@ trap on_exit EXIT
 source ~/.aliases # awslookup is defined here
 
 HOSTNAME=`echo $@ | sed s/.*@//`
-PRODUCTION_EC2_HOSTS=(`awslookup production '*' text | awk -F'\t' '{ print $2 }'`)
+PRODUCTION_EC2_HOSTS=(`awslookup production '*' text | awk -F'\t' '{ print $2"\n"$3 }'`)
 STAGING_EC2_HOSTS=(`awslookup staging '*' text | awk -F'\t' '{ print $2 }'`)
 
 if containsElement "$HOSTNAME" "${PRODUCTION_EC2_HOSTS[@]}"; then
