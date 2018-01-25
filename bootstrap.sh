@@ -30,6 +30,7 @@ git clone https://github.com/moll/vim-node.git
 git clone https://github.com/mtscout6/syntastic-local-eslint.vim.git
 git clone https://github.com/pangloss/vim-javascript
 git clone https://github.com/pearofducks/ansible-vim.git
+git clone https://github.com/prettier/vim-prettier
 git clone https://github.com/rking/ag.vim.git
 git clone https://github.com/robbles/logstash.vim.git
 git clone https://github.com/rodjek/vim-puppet.git
