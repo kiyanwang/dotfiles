@@ -61,6 +61,9 @@
   branches  = branch -avv
   delbranch = branch -d
 
+  # fetch prune and hard reset on master
+  frm = "!git fetch --prune && git reset --hard origin/master"
+
     # get upstream changes
   up = "!git fetch origin && git rebase origin/master"
   ir = "!git rebase -i origin/master"

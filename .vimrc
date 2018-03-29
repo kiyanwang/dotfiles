@@ -238,6 +238,10 @@ map <Leader>k <Plug>(easymotion-k)
 " => Plugin Configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" DEOPLETE
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+
 " AIRLINE STATUS LINE
 let g:airline_theme='base16_spacemacs'
 let g:airline_powerline_fonts = 1
@@ -326,6 +330,11 @@ let g:startify_skiplist = [
 let g:startify_commands = [
   \ {'t': ['Tasks', ':TW']},
   \ ]
+
+" VIM-PRETTIER
+" let g:prettier#autoformat = 0
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md PrettierAsync
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Custom Mappings / Shortcuts etc.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
