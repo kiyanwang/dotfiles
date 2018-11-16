@@ -108,3 +108,28 @@ awslookup() {
   fi
   eval $cmd
 }
+
+rename() {
+  for i in $1*
+  do
+    mv "$i" "${i/$1/$2}"
+  done
+}
+
+resume_all_vms() {
+  for vm in $(vagrant global-status | grep saved | awk ' { print $5 } '); do
+    cd $vm >/dev/null
+    echo "Resuming: " $vm
+    vagrant resume
+    cd - > /dev/null
+  done
+}
+
+suspend_all_vms() {
+  for vm in $(vagrant global-status | grep running | awk ' { print $5 } '); do
+    cd $vm >/dev/null
+    echo "Suspending: " $vm
+    vagrant suspend
+    cd - > /dev/null
+  done
+}
