@@ -11,6 +11,8 @@
 " how many lines of history VIM should remember
 set history=500
 
+set shell=/bin/sh
+
 " save information about files I open
 set viminfo='100,n$HOME/.vim/files/info/viminfo
 
@@ -239,8 +241,14 @@ map <Leader>k <Plug>(easymotion-k)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " DEOPLETE
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
 let g:deoplete#enable_smart_case = 1
+let g:deoplete#enable_ignore_case = 1
+let g:deoplete#auto_complete_start_length = 0
+let g:auto_complete_start_length = 0
+let g:deoplete#enable_refresh_always = 1
+let g:deoplete#enable_debug = 1
+let g:deoplete#enable_profile = 1
 
 " AIRLINE STATUS LINE
 let g:airline_theme='base16_spacemacs'
@@ -262,8 +270,10 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --ignore=".git" -g ""'
 " Make sure NERDTree lists hidden files
 let g:NERDTreeShowHidden=1
 let g:NERDTreeIgnore=['.git']
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeDirArrows=1
 " Use ctrl-n to activate nerdtree
-map <C-n> :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 
 " Turn off PHP Folding
 let g:DisableAutoPHPFolding = 1
@@ -287,13 +297,20 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_puppet_puppetlint_args = "--no-80chars-check"
 
+
+"let g:syntastic_php_checkers = ['php']
+"let g:syntastic_php_checkers = ['php', 'phpcs']
+"let g:syntastic_php_phpcs_exec = ['./vendor/bin/phpcs']
+"let g:syntastic_php_phpcs_args = ['-s -p --severity=3 --standard=./tests/Standards/TARL --extensions=php']
+
+
 " Point syntastic checker at locally installed `standard` if it exists.
 if executable('node_modules/.bin/tslint')
   let g:syntastic_typescript_tslint_exec = 'node_modules/.bin/tslint'
 endif
 
 " MULTIPLE CURSORS
-let g:multi_cursor_next_key='<C-m>'
+let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
@@ -385,6 +402,11 @@ nmap <leader>kk <Plug>(devdocs-under-cursor)
 " occurances of the current word
 nmap <leader>r :call Replace()<CR>
 
+" adds a date time formatted error_log line for debugging
+nmap <leader>ee oerror_log(date('d.m.Y h:i:s') ."\t" . "", 3, '/tmp/nad.txt');<ESC>21hi
+" removes all error_logs from current file
+nmap <leader>ed :g/error_log/d<CR>
+
 " Move a line of text using ALT+[jk]
 " or a selected block of text
 " in OSX cant map the ALT key so used this
@@ -395,6 +417,9 @@ inoremap ∆ <Esc>:m .+1<CR>==gi
 inoremap ˚ <Esc>:m .-2<CR>==gi
 vnoremap ∆ :m '>+1<CR>gv=gv
 vnoremap ˚ :m '<-2<CR>gv=gv
+
+" Workaround to update gitgutter when we do a commit through fugitive
+autocmd BufWritePost * GitGutterAll
 
 " Appends current date to the open buffer
 function! Today()
