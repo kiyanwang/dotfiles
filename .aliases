@@ -93,6 +93,16 @@ createtags() {
 }
 alias phptags=createtags
 
+alias dc='docker-compose'
+alias dcb='docker-compose -f docker-compose-build.yml'
+alias dockerStopAll="docker stop \$(docker ps -a -q)";
+alias dockerRmAll="docker rm \$(docker ps -a -q)";
+alias dockerRmVolumes="docker volume rm \`docker volume ls -q -f dangling=true\`"
+alias dockerRmDanglingImages="docker rmi \$(docker images -aq --filter dangling=true)"
+alias dockerCleanUp="dockerStopAll; dockerRmAll; dockerRmVolumes; dockerRmDanglingImages; docker network prune"
+alias dce='docker-compose -f docker-compose-experiment.yml'
+
+
 # uses aws cli to lookup instances based on a filter on the Name tag
 # $1 is the profile to use
 # $2 is the filter to use
