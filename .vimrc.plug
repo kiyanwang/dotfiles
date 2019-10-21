@@ -17,6 +17,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
+Plug 'tacahiroy/ctrlp-funky'
 Plug 'rking/ag.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -76,7 +77,7 @@ call plug#end()
 " how many lines of history VIM should remember
 set history=500
 
-set shell=/bin/sh
+" set shell=/bin/sh
 
 " save information about files I open
 set viminfo='100,n$HOME/.vim/files/info/viminfo
@@ -319,6 +320,12 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 " make sure ctrlp uses silver searcher (much much faster)
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --ignore=".git" -g ""'
+
+" CTRLP-Funky
+nnoremap <Leader>fu :CtrlPFunky<Cr>
+" narrow the list down with a word under cursor
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+let g:ctrlp_funky_syntax_highlight = 1
 
 " NERDTREE
 " Make sure NERDTree lists hidden files
