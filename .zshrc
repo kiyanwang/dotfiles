@@ -93,6 +93,7 @@ export DEFAULT_THEME="Spacemacs"
 export SSH_DEFAULT_THEME="Spacemacs"
 export SSH_DANGER_THEME="Production"
 export SSH_WARNING_THEME="Staging"
+export DEVELOPMENT_WORK_DIR=/Users/nadeemshabir/Development/talis
 
 export GOOGLER_COLORS=dhdxxy
 

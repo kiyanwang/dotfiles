@@ -102,6 +102,7 @@ alias dockerRmDanglingImages="docker rmi \$(docker images -aq --filter dangling=
 alias dockerCleanUp="dockerStopAll; dockerRmAll; dockerRmVolumes; dockerRmDanglingImages; docker network prune"
 alias dce='docker-compose -f docker-compose-experiment.yml'
 
+alias development="cd /Users/nadeemshabir/Development/talis"
 
 # uses aws cli to lookup instances based on a filter on the Name tag
 # $1 is the profile to use
