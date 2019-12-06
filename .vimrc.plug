@@ -67,6 +67,7 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'derekprior/vim-trimmer'
 Plug 'Shougo/vimproc.vim'
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'kkoomen/vim-doge'
 
 " Add plugins to &runtimepath
 call plug#end()

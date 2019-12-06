@@ -60,6 +60,8 @@ export PATH="$PATH:/Users/nadeemshabir/.rvm/gems/ruby-1.9.3-p448/bin:/Users/nade
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH="/opt/local/bin:/opt/local/sbin:/opt/puppetlabs/bin:/opt/local/Library/Frameworks/Python.framework/Versions/3.5/bin:/Users/nadeemshabir/Development/dasht/bin:/Users/nadeemshabir/Development/projects/go/bin:$PATH"
 
+export PATH="/Users/nadeemshabir/.pyenv/bin:$PATH"
+
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -147,3 +149,9 @@ fi
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Talis CLI Tools
+PATH=$PATH:/Users/nadeemshabir/Development/talis/talis-cli-tools/bin
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
