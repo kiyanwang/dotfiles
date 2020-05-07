@@ -13,6 +13,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 typeset -g POWERLEVEL9K_MODE='nerdfont-complete'
 typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_beginning
 typeset -g POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
 typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX='%F{blue}╭─'
 typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX='%F{blue}├─'
