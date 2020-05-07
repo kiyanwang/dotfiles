@@ -9,12 +9,21 @@ export ZSH=/Users/nadeemshabir/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="agnoster"
 POWERLEVEL9K_MODE='nerdfont-complete'
-ZSH_THEME="powerlevel9k/powerlevel9k"
+# ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 POWERLEVEL9K_SHORTEN_STRATEGY=truncate_beginning
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX='%F{blue}╭─'
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%F{blue}╰%f '
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context root_indicator dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time time)
+
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=black
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=blue
+POWERLEVEL9K_COMMAND_BACKGROUND_JOBS_BACKGROUND=black
+POWERLEVEL9K_COMMAND_BACKGROUND_JOBS_FOREGROUND=cyan
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -163,3 +172,4 @@ PATH=$PATH:/Users/nadeemshabir/Development/talis/talis-cli-tools/bin:/Users/nade
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
