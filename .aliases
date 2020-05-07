@@ -1,5 +1,6 @@
 #!/bin/bash
-
+alias vi='nvim'
+alias vim='nvim'
 alias ll="ls -alh"
 
 # pretty print with syntax highlighting
@@ -102,6 +103,17 @@ alias dockerRmDanglingImages="docker rmi \$(docker images -aq --filter dangling=
 alias dockerCleanUp="dockerStopAll; dockerRmAll; dockerRmVolumes; dockerRmDanglingImages; docker network prune"
 alias dce='docker-compose -f docker-compose-experiment.yml'
 
+alias tf-lint="docker run --rm -v \$(pwd):/data -t wata727/tflint --disable-rule=aws_elasticache_cluster_invalid_type --disable-rule=aws_elasticache_cluster_default_parameter_group"
+
+clearDockerLog(){
+  dockerLogFile=$(docker inspect $1 | grep -G '\"LogPath\": \"*\"' | sed -e 's/.*\"LogPath\": \"//g' | sed -e 's/\",//g')
+  rmCommand="rm $dockerLogFile"
+  screen -d -m -S dockerlogdelete ~/Library/Containers/com.docker.docker/Data/vms/0/tty
+  screen -S dockerlogdelete -p 0 -X stuff $"$rmCommand"
+  screen -S dockerlogdelete -p 0 -X stuff $'\n'
+  screen -S dockerlogdelete -X quit
+}
+
 alias development="cd /Users/nadeemshabir/Development/talis"
 
 # uses aws cli to lookup instances based on a filter on the Name tag
@@ -143,4 +155,9 @@ suspend_all_vms() {
     vagrant suspend
     cd - > /dev/null
   done
+}
+
+random_string() {
+  cmd="openssl rand -base64 $1"
+  eval $cmd
 }

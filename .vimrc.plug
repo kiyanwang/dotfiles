@@ -68,6 +68,7 @@ Plug 'derekprior/vim-trimmer'
 Plug 'Shougo/vimproc.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'kkoomen/vim-doge'
+Plug 'vimwiki/vimwiki'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -119,6 +120,9 @@ set iskeyword=-,:,@,48-57,_,192-255
 " Use f2 to toggle paste mode
 set pastetoggle=<F2>
 
+highlight Normal ctermbg=none guibg=none
+highlight NonText ctermbg=none guibg=none guifg=none ctermfg=none
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface tweaks
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -126,6 +130,8 @@ set pastetoggle=<F2>
 set t_Co=256
 
 if (has("termguicolors"))
+  set t_8f=\[[38;2;%lu;%lu;%lum
+  set t_8b=\[[48;2;%lu;%lu;%lum
   set termguicolors
 endif
 
@@ -451,7 +457,7 @@ nnoremap <leader>fa :set filetype=ansible<CR>
 " set working directory to current file
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 " remove all trailing whitespace from the file
-nnoremap <leader>ws :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap <leader>wws :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " closes all buffers that aren't currently visible in
 " window/split/tab

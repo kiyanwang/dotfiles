@@ -8,7 +8,13 @@ export ZSH=/Users/nadeemshabir/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="agnoster"
+POWERLEVEL9K_MODE='nerdfont-complete'
 ZSH_THEME="powerlevel9k/powerlevel9k"
+
+POWERLEVEL9K_SHORTEN_STRATEGY=truncate_beginning
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX='%F{blue}╭─'
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%F{blue}╰%f '
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -52,13 +58,15 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git, colorize)
+plugins=(git colorize fast-syntax-highlighting zsh-autosuggestions dune-quotes)
 
 # User configuration
 
-export PATH="$PATH:/Users/nadeemshabir/.rvm/gems/ruby-1.9.3-p448/bin:/Users/nadeemshabir/.rvm/gems/ruby-1.9.3-p448@global/bin:/Users/nadeemshabir/.rvm/rubies/ruby-1.9.3-p448/bin:/Users/nadeemshabir/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+#export PATH="$PATH:/Users/nadeemshabir/.rvm/gems/ruby-1.9.3-p448/bin:/Users/nadeemshabir/.rvm/gems/ruby-1.9.3-p448@global/bin:/Users/nadeemshabir/.rvm/rubies/ruby-1.9.3-p448/bin:/Users/nadeemshabir/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
-export PATH="/opt/local/bin:/opt/local/sbin:/opt/puppetlabs/bin:/opt/local/Library/Frameworks/Python.framework/Versions/3.5/bin:/Users/nadeemshabir/Development/dasht/bin:/Users/nadeemshabir/Development/projects/go/bin:$PATH"
+
+#export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/bin:/opt/local/sbin:$PATH"
+export PATH="/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
 export PATH="/Users/nadeemshabir/.pyenv/bin:$PATH"
 
@@ -148,10 +156,10 @@ fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source ~/.fzf.zsh
 
 # Talis CLI Tools
-PATH=$PATH:/Users/nadeemshabir/Development/talis/talis-cli-tools/bin
+PATH=$PATH:/Users/nadeemshabir/Development/talis/talis-cli-tools/bin:/Users/nadeemshabir/.local/bin
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
