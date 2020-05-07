@@ -8,22 +8,40 @@ export ZSH=/Users/nadeemshabir/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="agnoster"
-POWERLEVEL9K_MODE='nerdfont-complete'
-# ZSH_THEME="powerlevel9k/powerlevel9k"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-POWERLEVEL9K_SHORTEN_STRATEGY=truncate_beginning
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX='%F{blue}╭─'
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%F{blue}╰%f '
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context root_indicator dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time time)
+typeset -g POWERLEVEL9K_MODE='nerdfont-complete'
+typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_beginning
+typeset -g POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=black
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=blue
-POWERLEVEL9K_COMMAND_BACKGROUND_JOBS_BACKGROUND=black
-POWERLEVEL9K_COMMAND_BACKGROUND_JOBS_FOREGROUND=cyan
+typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX='%F{blue}╭─'
+typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX='%F{blue}├─'
+typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%F{blue}╰%f '
+typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_SUFFIX='%F{blue}─╮'
+typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_SUFFIX='%F{blue}─┤'
+typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_SUFFIX='%F{blue}─╯'
+
+typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator dir vcs)
+typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time time battery)
+
+typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
+typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=black
+typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=blue
+typeset -g POWERLEVEL9K_COMMAND_BACKGROUND_JOBS_BACKGROUND=black
+typeset -g POWERLEVEL9K_COMMAND_BACKGROUND_JOBS_FOREGROUND=cyan
+
+typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR='·'
+typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_BACKGROUND=
+typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_GAP_BACKGROUND=
+if [[ $POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR != ' ' ]]; then
+    # The color of the filler. You'll probably want to match the color of POWERLEVEL9K_MULTILINE
+    # ornaments defined above.
+    typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND=242
+    # Start filler from the edge of the screen if there are no left segments on the first line.
+    typeset -g POWERLEVEL9K_EMPTY_LINE_LEFT_PROMPT_FIRST_SEGMENT_END_SYMBOL='%{%}'
+    # End filler on the edge of the screen if there are no right segments on the first line.
+    typeset -g POWERLEVEL9K_EMPTY_LINE_RIGHT_PROMPT_FIRST_SEGMENT_START_SYMBOL='%{%}'
+fi
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
