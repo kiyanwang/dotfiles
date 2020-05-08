@@ -1,6 +1,7 @@
 #!/bin/bash
 alias vi='nvim'
 alias vim='nvim'
+alias view='nvim -R'
 alias ll="ls -alh"
 
 # pretty print with syntax highlighting
