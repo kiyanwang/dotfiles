@@ -2,7 +2,17 @@
 alias vi='nvim'
 alias vim='nvim'
 alias view='nvim -R'
-alias ll="ls -alh"
+#alias ll="ls -alh"
+
+# colorls
+#alias ls="colorls"
+#alias ll="ls -alh"
+#alias tree="colorls --tree"
+
+# lsd
+alias ls="lsd"
+alias ll="ls --group-dirs=first -alh"
+alias tree="lsd --tree"
 
 # pretty print with syntax highlighting
 alias c='pygmentize -O style=monokai,bg=dark -f console256 -g'

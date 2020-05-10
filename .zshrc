@@ -98,6 +98,8 @@ export PATH="/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sb
 
 export PATH="/Users/nadeemshabir/.pyenv/bin:$PATH"
 
+export PATH="$PATH:/Users/nadeemshabir/.cargo/bin"
+
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
