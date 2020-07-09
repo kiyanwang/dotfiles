@@ -10,8 +10,8 @@ alias view='nvim -R'
 #alias tree="colorls --tree"
 
 # lsd
-alias ls="lsd"
-alias ll="ls --group-dirs=first -alh"
+alias ls="lsd --group-dirs=first"
+alias ll="ls -alh"
 alias tree="lsd --tree"
 
 # pretty print with syntax highlighting
@@ -118,6 +118,7 @@ alias tf-lint="docker run --rm -v \$(pwd):/data -t wata727/tflint --disable-rule
 
 clearDockerLog(){
   dockerLogFile=$(docker inspect $1 | grep -G '\"LogPath\": \"*\"' | sed -e 's/.*\"LogPath\": \"//g' | sed -e 's/\",//g')
+  echo $dockerLogFile
   rmCommand="rm $dockerLogFile"
   screen -d -m -S dockerlogdelete ~/Library/Containers/com.docker.docker/Data/vms/0/tty
   screen -S dockerlogdelete -p 0 -X stuff $"$rmCommand"
@@ -172,3 +173,6 @@ random_string() {
   cmd="openssl rand -base64 $1"
   eval $cmd
 }
+
+export JQ_BIN_PATH='/opt/local/bin/jq'
+export YQ_BIN_PATH='/Users/nadeemshabir/go/bin/yq'

@@ -23,7 +23,7 @@ typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_SUFFIX='%F{blue}─┤'
 typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_SUFFIX='%F{blue}─╯'
 
 typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator dir dir_writable vcs)
-typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time time battery)
+typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status kubecontext command_execution_time time battery)
 
 typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
 typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=black
@@ -43,6 +43,13 @@ if [[ $POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR != ' ' ]]; then
     # End filler on the edge of the screen if there are no right segments on the first line.
     typeset -g POWERLEVEL9K_EMPTY_LINE_RIGHT_PROMPT_FIRST_SEGMENT_START_SYMBOL='%{%}'
 fi
+
+typeset -g POWERLEVEL9K_KUBECONTEXT_CLASSES=(
+      # '*prod*'  PROD    # These values are examples that are unlikely
+      # '*test*'  TEST    # to match your needs. Customize them as needed.
+      '*'       DEFAULT)
+typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_FOREGROUND=0
+typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_BACKGROUND=69
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -86,7 +93,7 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colorize fast-syntax-highlighting zsh-autosuggestions dune-quotes)
+plugins=(git colorize fast-syntax-highlighting zsh-autosuggestions dune-quotes colored-man-pages)
 
 # User configuration
 
@@ -99,9 +106,12 @@ export PATH="/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sb
 export PATH="/Users/nadeemshabir/.pyenv/bin:$PATH"
 
 export PATH="$PATH:/Users/nadeemshabir/.cargo/bin"
+export PATH="$PATH:/Users/nadeemshabir/go/bin"
+export PATH="$PATH:/Users/nadeemshabir/Development/bin"
 
 source $ZSH/oh-my-zsh.sh
 
+source <(kubectl completion zsh)
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
@@ -150,6 +160,7 @@ alias vless="/opt/local/share/vim/vim74/macros/less.sh"
 source ~/.aliases
 source ~/.server_aliases
 
+source <("$DEVELOPMENT_WORK_DIR/infra/docker-compose-dev.sh" completion zsh docker-compose-dev dcd)
 # LESS with syntax highlighting
 LESSPIPE=`which src-hilite-lesspipe.sh`
 export LESSOPEN="| ${LESSPIPE} %s"
@@ -187,6 +198,8 @@ fi
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 source ~/.fzf.zsh
+
+source /opt/local/share/nvm/init-nvm.sh
 
 # Talis CLI Tools
 PATH=$PATH:/Users/nadeemshabir/Development/talis/talis-cli-tools/bin:/Users/nadeemshabir/.local/bin
