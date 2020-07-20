@@ -126,7 +126,7 @@ clearDockerLog(){
   screen -S dockerlogdelete -X quit
 }
 
-alias development="cd /Users/nadeemshabir/Development/talis"
+alias development="pushd /Users/nadeemshabir/Development/talis && clear && ll"
 
 # uses aws cli to lookup instances based on a filter on the Name tag
 # $1 is the profile to use
