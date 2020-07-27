@@ -15,8 +15,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
-" Plug 'kien/ctrlp.vim'
-" Plug 'tacahiroy/ctrlp-funky'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'rking/ag.vim'
@@ -46,8 +44,6 @@ Plug 'moll/vim-node'
 Plug 'sumpygump/php-documentor-vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'mtscout6/syntastic-local-eslint.vim'
-"Plug 'majutsushi/tagbar'
-"Plug 'vim-php/tagbar-phpctags.vim'
 Plug 'wincent/terminus'
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
@@ -72,6 +68,7 @@ Plug 'kkoomen/vim-doge'
 Plug 'vimwiki/vimwiki'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vista.vim'
+Plug 'sheerun/vim-polyglot'
 
 
 " Add plugins to &runtimepath
@@ -352,35 +349,11 @@ let g:airline_symbols.linenr = ''
 " SILVER SEARCHER
 let g:ag_prg="ag --vimgrep"
 
-" CTRL-P
-"let g:ctrlp_match_window = 'bottom,order:ttb'
-"let g:ctrlp_switch_buffer = 0
-"let g:ctrlp_working_path_mode = 'ra'
-"let g:ctrlp_show_hidden = 1
-" make sure ctrlp uses silver searcher (much much faster)
-"let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --ignore=".git" -g ""'
-
-" CTRLP-Funky
-"nnoremap <Leader>fu :CtrlPFunky<Cr>
-" narrow the list down with a word under cursor
-"nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
-"let g:ctrlp_funky_syntax_highlight = 1
-
-
 " FZF
 nnoremap <C-p> :GFiles<CR>
 nnoremap <Leader>pf :Files<CR>
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
-
-" NERDTREE
-" Make sure NERDTree lists hidden files
-"let g:NERDTreeShowHidden=1
-"let g:NERDTreeIgnore=['.git']
-"let g:NERDTreeMinimalUI=1
-"let g:NERDTreeDirArrows=1
-" Use ctrl-n to activate nerdtree
-" map <leader>n :NERDTreeToggle<CR>
 
 " Turn off PHP Folding
 let g:DisableAutoPHPFolding = 1
