@@ -69,7 +69,8 @@ Plug 'vimwiki/vimwiki'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vista.vim'
 Plug 'sheerun/vim-polyglot'
-
+Plug 'rhysd/git-messenger.vim'
+Plug 'segeljakt/vim-silicon'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -447,6 +448,23 @@ let g:vista_executive_for = {
 \  }
 nnoremap <leader>vt :Vista coc<CR>
 
+" SILICON (code screenshots)
+let g:silicon = {
+      \   'theme':              'Dracula',
+      \   'font':                  'Hack',
+      \   'background':         '#AAAAFF',
+      \   'shadow-color':       '#555555',
+      \   'line-pad':                   2,
+      \   'pad-horiz':                 80,
+      \   'pad-vert':                 100,
+      \   'shadow-blur-radius':         0,
+      \   'shadow-offset-x':            0,
+      \   'shadow-offset-y':            0,
+      \   'line-number':           v:true,
+      \   'round-corner':          v:true,
+      \   'window-controls':       v:true,
+      \   'output': '~/Downloads/code_screenshots/silicon-{time:%Y-%m-%d-%H%M%S}.png',
+      \ }
 
 " VIM CoC
 
