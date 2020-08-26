@@ -175,5 +175,20 @@ random_string() {
   eval $cmd
 }
 
+fgc() {
+  result=$(git branch -a --color=always | grep -v '/HEAD\s' | sort | fzf --height 90% --border --ansi --tac --preview-window right:70% --preview 'git log --oneline --graph --date=short --pretty="format:%C(auto)%cd %h%d %s" $(sed s/^..// <<< {} | cut -d" " -f1) | head -'$LINES | sed 's/^..//' | cut -d' ' -f1)
+
+  if [[ $result != "" ]]; then
+    if [[ $result == remotes/* ]]; then
+      git checkout --track $(echo $result | sed 's#remotes/##')
+    else
+      git checkout "$result"
+    fi
+  fi
+}
+
+fgs() {
+  git -c color.status=always status --short | fzf --height 90%  --reverse --border --ansi --multi --ansi --nth 2..,.. --preview '(git diff --color=always -- {-1} | sed 1,4d; cat {-1})' --preview-window=right:70%  | cut -c4- | sed 's/.* -> //'
+}
 export JQ_BIN_PATH='/opt/local/bin/jq'
 export YQ_BIN_PATH='/Users/nadeemshabir/go/bin/yq'
