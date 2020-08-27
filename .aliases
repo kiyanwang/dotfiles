@@ -2,12 +2,6 @@
 alias vi='nvim'
 alias vim='nvim'
 alias view='nvim -R'
-#alias ll="ls -alh"
-
-# colorls
-#alias ls="colorls"
-#alias ll="ls -alh"
-#alias tree="colorls --tree"
 
 # lsd
 alias ls="lsd --group-dirs=first"
