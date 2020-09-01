@@ -71,6 +71,8 @@ Plug 'liuchengxu/vista.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'rhysd/git-messenger.vim'
 Plug 'segeljakt/vim-silicon'
+Plug 'stsewd/fzf-checkout.vim'
+Plug 'pechorin/any-jump.vim'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -354,7 +356,10 @@ let g:ag_prg="ag --vimgrep"
 nnoremap <C-p> :GFiles<CR>
 nnoremap <Leader>pf :Files<CR>
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
-let $FZF_DEFAULT_OPTS='--reverse'
+let $FZF_DEFAULT_OPTS="--reverse"
+"
+nnoremap // :BLines<CR>
+nnoremap ?? :Rg<CR>
 
 " Turn off PHP Folding
 let g:DisableAutoPHPFolding = 1
@@ -696,6 +701,9 @@ command! Today :call Today()
 
 " Show current buffer in NerdTree
 map <leader>ff :NERDTreeFind<CR>
+
+" Open and close lazygit
+noremap <leader>gg :tab term lazygit<CR>
 
 func! s:buf_compare(b1, b2) abort
   let b1_visible = -1 == index(tabpagebuflist(), a:b1)
