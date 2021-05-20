@@ -47,7 +47,7 @@ Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'wincent/terminus'
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
-Plug 'blueyed/vim-diminactive'
+" Plug 'blueyed/vim-diminactive'
 Plug 'duggiefresh/vim-easydir'
 Plug 'easymotion/vim-easymotion'
 Plug 'pangloss/vim-javascript'
@@ -73,6 +73,7 @@ Plug 'rhysd/git-messenger.vim'
 Plug 'segeljakt/vim-silicon'
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'pechorin/any-jump.vim'
+Plug 'szw/vim-maximizer'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -140,8 +141,9 @@ if (has("termguicolors"))
 endif
 
 " use solarized dark theme
-" colorscheme solarized8_dark
-colorscheme spacemacs-theme
+" colorscheme spacemacs-theme
+" colorscheme iceberg
+colorscheme deep-space
 set background=dark
 
 " Always use powerline font in MacVim
@@ -268,7 +270,7 @@ set fileformats=unix,mac,dos
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 au FileType puppet setlocal isk+=:
 au BufReadPost *.eyaml set syntax=yaml
-au BufNewFile,BufRead *.yaml set filetype=yaml.ansible
+"au BufNewFile,BufRead *.yaml set filetype=yaml.ansible
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers

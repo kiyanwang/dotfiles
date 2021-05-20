@@ -138,7 +138,7 @@ export EDITOR=nvim
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export EDITOR=vim
+export EDITOR=nvim
 setopt AUTO_CD
 
 export DEFAULT_THEME="Spacemacs"
@@ -204,8 +204,21 @@ source ~/.fzf.zsh
 source /opt/local/share/nvm/init-nvm.sh
 
 # Talis CLI Tools
-PATH=$PATH:/Users/nadeemshabir/Development/talis/talis-cli-tools/bin:/Users/nadeemshabir/.local/bin
+#PATH=$PATH:/Users/nadeemshabir/Development/talis/talis-cli-tools/bin:/Users/nadeemshabir/.local/bin
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+PATH=/Users/nadeemshabir/Development/talis/talis-cli-tools/bin:$PATH:/Users/nadeemshabir/.local/bin
+
+# Talis CLI completions
+if [ -f '/Users/nadeemshabir/Development/talis/talis-cli-tools/completions/completions.zsh' ]; then
+  source '/Users/nadeemshabir/Development/talis/talis-cli-tools/completions/completions.zsh'
+fi
+
+
+
+#### FIG ENV VARIABLES ####
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####
+
 

@@ -123,6 +123,16 @@ clearDockerLog(){
 alias development="pushd /Users/nadeemshabir/Development/talis && clear && ll"
 alias dotfiles="pushd /Users/nadeemshabir/Development/github/dotfiles && clear && ll"
 
+alias kibana_staging='open https://logs-eks-staging-eu.talisaspire.com/_plugin/kibana/app/discover'
+alias kibana_production_eu='open https://logs-eks-eu.talisaspire.com/_plugin/kibana/app/discover'
+alias kibana_production_ca='open https://logs-eks.ca.talisaspire.com/_plugin/kibana/app/discover'
+alias grafana_staging='open http://grafana-eks-staging-eu.talisaspire.com/'
+alias grafana_production_eu='open http://grafana-eks-eu.talisaspire.com/'
+alias grafana_production_ca='open http://grafana-eks.ca.talisaspire.com/'
+alias k8sdashboard_staging='open https://dashboard-eks-staging-eu.talisaspire.com/'
+alias k8sdashboard_production_eu='open https://dashboard-eks-eu.talisaspire.com/'
+alias k8sdashboard_production_ca='open https://dashboard-eks-ca.talisaspire.com/'
+
 # uses aws cli to lookup instances based on a filter on the Name tag
 # $1 is the profile to use
 # $2 is the filter to use
