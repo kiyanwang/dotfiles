@@ -101,6 +101,8 @@ set nocompatible
 let mapleader=","
 let g:mapleader=","
 
+let wibble=""
+
 " i prefer this for saving, faster than typing :w
 nmap <leader>w :w!<cr>
 
