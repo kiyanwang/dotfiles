@@ -4,8 +4,8 @@
   "explorer.icon.enableNerdfont": true,
   "explorer.openAction.for.directory": "none",
   "explorer.previewAction.onHover": false,
-  "explorer.keyMappings": {
-    "<cr>": ["expanded?", "collapse", "expand", "open"],
+  "explorer.keyMappings.global": {
+    "<cr>": ["wait","expanded?", "collapse", "expand", "open"],
     "v": "open:vsplit"
   },
 

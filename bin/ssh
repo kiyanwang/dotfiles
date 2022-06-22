@@ -76,6 +76,6 @@ else
   esac
 fi
 
-echo "Connecting to $HOSTNAME"
+echo "Connecting to $HOSTNAME" >&2
 
 /usr/bin/ssh "$@"

@@ -216,9 +216,3 @@ if [ -f '/Users/nadeemshabir/Development/talis/talis-cli-tools/completions/compl
 fi
 
 
-
-#### FIG ENV VARIABLES ####
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
-#### END FIG ENV VARIABLES ####
-
-
