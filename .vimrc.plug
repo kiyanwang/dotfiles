@@ -651,10 +651,7 @@ nnoremap <leader>sv :so $MYVIMRC<CR>  " reload .vimrc
 nnoremap <leader>gt :GundoToggle<CR> " toggles Gundo
 
 " fugitive mappings
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>gb :Gbrowse<CR>
-nnoremap <leader>gpu :Gpush<CR>
+nnoremap <leader>gs :Git<CR>
 
 " Toggle the tagbar view
 nnoremap <leader>tb :TagbarToggle<CR>
