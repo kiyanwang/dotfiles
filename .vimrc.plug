@@ -24,7 +24,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 Plug 'thaerkh/vim-workspace'
 Plug 'mhinz/vim-startify'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'blindFS/vim-taskwarrior'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'SirVer/ultisnips'
@@ -47,7 +46,6 @@ Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'wincent/terminus'
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
-" Plug 'blueyed/vim-diminactive'
 Plug 'duggiefresh/vim-easydir'
 Plug 'easymotion/vim-easymotion'
 Plug 'pangloss/vim-javascript'
@@ -76,6 +74,9 @@ Plug 'pechorin/any-jump.vim'
 Plug 'szw/vim-maximizer'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'preservim/tagbar'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -403,12 +404,6 @@ if executable('node_modules/.bin/tslint')
   let g:syntastic_typescript_tslint_exec = 'node_modules/.bin/tslint'
 endif
 
-" MULTIPLE CURSORS
-let g:multi_cursor_next_key='<C-n>'
-let g:multi_cursor_prev_key='<C-p>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
-
 " TASK-WARRIOR
 let g:task_rc_override='rc.defaultwidth=180'
 let g:task_default_prompt=['due', 'project', 'priority', 'description', 'mystatus', 'tag', 'depends']
@@ -662,7 +657,7 @@ nnoremap <leader>gb :Gbrowse<CR>
 nnoremap <leader>gpu :Gpush<CR>
 
 " Toggle the tagbar view
-nnoremap <leader>tt :TagbarToggle<CR>
+nnoremap <leader>tb :TagbarToggle<CR>
 
 " Force the filetype to ansible manually
 nnoremap <leader>fa :set filetype=ansible<CR>
