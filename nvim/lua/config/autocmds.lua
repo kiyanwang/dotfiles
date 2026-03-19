@@ -21,15 +21,6 @@ autocmd("FileType", {
   end,
 })
 
--- Puppet iskeyword
-autocmd("FileType", {
-  group = augroup("PuppetKeyword", {}),
-  pattern = "puppet",
-  callback = function()
-    vim.opt_local.iskeyword:append(":")
-  end,
-})
-
 -- Filetype associations
 autocmd({ "BufNewFile", "BufFilePre", "BufRead" }, {
   group = augroup("MarkdownFiletype", {}),
@@ -44,6 +35,17 @@ autocmd("BufReadPost", {
   pattern = "*.eyaml",
   callback = function()
     vim.bo.syntax = "yaml"
+  end,
+})
+
+-- Re-detect filetype when entering a buffer with no filetype set
+-- (fixes alpha-nvim / nvim-tree interaction where filetype detection is skipped)
+autocmd("BufEnter", {
+  group = augroup("FiletypeDetect", {}),
+  callback = function()
+    if vim.bo.filetype == "" and vim.bo.buftype == "" and vim.fn.expand("%:t") ~= "" then
+      vim.cmd("filetype detect")
+    end
   end,
 })
 
