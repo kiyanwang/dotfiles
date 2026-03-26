@@ -57,6 +57,12 @@ return {
         },
       })
 
+      -- Nushell LSP (built into the nu binary, not managed by mason)
+      vim.lsp.config("nushell", {
+        cmd = { "nu", "--lsp" },
+        filetypes = { "nu" },
+      })
+
       -- Enable all servers
       vim.lsp.enable({
         "ts_ls",
@@ -71,6 +77,7 @@ return {
         "yamlls",
         "eslint",
         "bashls",
+        "nushell",
       })
 
       -- Keymaps on LSP attach (preserving CoC bindings)

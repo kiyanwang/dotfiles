@@ -17,6 +17,7 @@ return {
         "json",
         "lua",
         "markdown",
+        "nu",
         "markdown_inline",
         "php",
         "puppet",
