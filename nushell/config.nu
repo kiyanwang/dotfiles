@@ -9,12 +9,17 @@ path add "~/.cargo/bin"
 
 # settings
 $env.config.buffer_editor = 'nvim'
-$env.config.plugins.highlight.custom_themes = '~/.nu/highlight/custom_themes'
-$env.config.plugins.highlight.theme = "gruvbox-dark"
+$env.config.plugins.highlight.theme = 'gruvbox-dark'
+$env.config.table.mode = 'rounded'
+$env.config.table.index_mode = 'always'
+$env.config.table.show_empty = true
+$env.config.table.trim.methodology = 'wrapping'
+$env.config.table.trim.wrapping_try_keep_words = true
+$env.config.table.trim.truncating_suffix = '...'
 
 # aliases
 def ll [] { ls -a | sort-by type name }
-def whatsmyip [] { curl http://ipecho.net/plain; echo }
+def whatsmyip [] { http get http://ipecho.net/plain }
 
 alias clc = claude --allow-dangerously-skip-permissions --chrome
 alias vi = nvim
