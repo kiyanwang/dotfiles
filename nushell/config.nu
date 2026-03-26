@@ -4,8 +4,10 @@
 # See https://www.nushell.sh/book/configuration.html
 
 use std/util "path add"
+path add /opt/homebrew/bin
 path add "~/.local/bin"
 path add "~/.cargo/bin"
+path add "~/.nvm"
 
 # settings
 $env.config.buffer_editor = 'nvim'
