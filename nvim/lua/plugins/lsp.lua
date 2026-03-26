@@ -109,8 +109,8 @@ return {
           end, opts("Quick fix"))
 
           -- Diagnostics navigation
-          map("n", "[d", vim.diagnostic.goto_prev, opts("Previous diagnostic"))
-          map("n", "]d", vim.diagnostic.goto_next, opts("Next diagnostic"))
+          map("n", "[d", function() vim.diagnostic.jump({ count = -1 }) end, opts("Previous diagnostic"))
+          map("n", "]d", function() vim.diagnostic.jump({ count = 1 }) end, opts("Next diagnostic"))
 
           -- Telescope LSP pickers (space prefix, matching old CoC bindings)
           map("n", "<space>a", "<cmd>Telescope diagnostics<cr>", opts("Diagnostics list"))
@@ -123,8 +123,8 @@ return {
           end, opts("Search word in project"))
 
           -- Highlight references on CursorHold
-          local client = vim.lsp.get_client_by_id(ev.data.client_id)
-          if client and client.supports_method("textDocument/documentHighlight") then
+          local client = vim.lsp.get_clients({ id = ev.data.client_id })[1]
+          if client and client:supports_method("textDocument/documentHighlight") then
             local hl_group = vim.api.nvim_create_augroup("LspHighlight", { clear = false })
             vim.api.nvim_create_autocmd("CursorHold", {
               group = hl_group,

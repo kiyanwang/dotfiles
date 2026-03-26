@@ -8,7 +8,6 @@ return {
         { "<leader>g", group = "git" },
         { "<leader>h", group = "hunks" },
         { "<leader>b", group = "buffer" },
-        { "<leader>w", group = "save" },
         { "<leader>e", group = "config" },
         { "<leader>q", group = "quickfix" },
         { "<leader>p", group = "project" },

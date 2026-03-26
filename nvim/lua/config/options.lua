@@ -24,9 +24,6 @@ opt.smartcase = true
 opt.hlsearch = true
 opt.incsearch = true
 
--- Performance
-opt.lazyredraw = true
-
 -- Bracket matching
 opt.showmatch = true
 opt.matchtime = 2
