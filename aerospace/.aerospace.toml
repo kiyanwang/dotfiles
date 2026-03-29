@@ -79,12 +79,12 @@ on-mode-changed = []
 9 = 'secondary'
 
 [gaps]
-    inner.horizontal = 10
-    inner.vertical =   10
-    outer.left =       10
-    outer.bottom =     10
-    outer.top =        10
-    outer.right =      10
+    inner.horizontal = 15
+    inner.vertical =   15
+    outer.left =       15
+    outer.bottom =     15
+    outer.top =        15
+    outer.right =      15
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -137,15 +137,15 @@ on-mode-changed = []
     alt-equal = 'resize smart +50'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-    alt-1 = 'workspace 1'
-    alt-2 = 'workspace 2'
-    alt-3 = 'workspace 3'
-    alt-4 = 'workspace 4'
-    alt-5 = 'workspace 5'
-    alt-6 = 'workspace 6'
-    alt-7 = 'workspace 7'
-    alt-8 = 'workspace 8'
-    alt-9 = 'workspace 9'
+    ctrl-alt-1 = 'workspace 1'
+    ctrl-alt-2 = 'workspace 2'
+    ctrl-alt-3 = 'workspace 3'
+    ctrl-alt-4 = 'workspace 4'
+    ctrl-alt-5 = 'workspace 5'
+    ctrl-alt-6 = 'workspace 6'
+    ctrl-alt-7 = 'workspace 7'
+    ctrl-alt-8 = 'workspace 8'
+    ctrl-alt-9 = 'workspace 9'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
