@@ -33,6 +33,13 @@ default=(
 )
 sketchybar --default "${default[@]}"
 
+sketchybar --add item apple left \
+           --set apple \
+           icon=󰀵 \
+           icon.color=0xff7aa2f7 \
+           icon.font="Hack Nerd Font:Bold:18.0" \
+           label.drawing=off
+
 sketchybar --add event aerospace_workspace_change
 
 # Secondary monitor workspaces first, then main
@@ -53,7 +60,7 @@ done
 sketchybar --add item separator left \
            --set separator \
            icon="│" \
-           icon.color=0xffa8c8e8 \
+           icon.color=0xff7aa2f7 \
            icon.padding_left=4 \
            icon.padding_right=4 \
            label.drawing=off \
@@ -68,7 +75,7 @@ sketchybar --add bracket workspaces '/space\..*/' separator \
            background.color=0x33ffffff \
            background.corner_radius=10 \
            background.height=28 \
-           background.border_color=0xffa8c8e8 \
+           background.border_color=0xff7aa2f7 \
            background.border_width=2
 
 
@@ -106,6 +113,13 @@ sketchybar --add item chevron left \
            --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
            --subscribe front_app front_app_switched
 
+# Bracket the chevron and front app in a rounded pill
+sketchybar --add bracket front_app_bracket front_app \
+           --set front_app_bracket \
+           background.color=0x33ffffff \
+           background.corner_radius=10 \
+           background.height=28
+
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
 # Additional position (e.g. center) are available, see:
@@ -124,7 +138,11 @@ sketchybar --add item clock right \
            --subscribe volume volume_change \
            --add item battery right \
            --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-           --subscribe battery system_woke power_source_change
+           --subscribe battery system_woke power_source_change \
+           --add item ram right \
+           --set ram update_freq=10 icon=󰍛 script="$PLUGIN_DIR/ram.sh" \
+           --add item cpu right \
+           --set cpu update_freq=10 icon=󰻠 script="$PLUGIN_DIR/cpu.sh"
 
 
 ##### Force all scripts to run the first time (never do this in a script) #####
