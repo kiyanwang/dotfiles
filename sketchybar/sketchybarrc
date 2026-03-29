@@ -133,6 +133,9 @@ sketchybar --add bracket front_app_bracket front_app \
 
 sketchybar --add item clock right \
            --set clock update_freq=10 icon=  script="$PLUGIN_DIR/clock.sh" \
+           --add item mic right \
+           --set mic icon=󰍬 label.drawing=off script="$PLUGIN_DIR/mic.sh" \
+           --subscribe mic mouse.clicked \
            --add item volume right \
            --set volume script="$PLUGIN_DIR/volume.sh" \
            click_script="open x-apple.systempreferences:com.apple.Sound-Settings.extension" \
