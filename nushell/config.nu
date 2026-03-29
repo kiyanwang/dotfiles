@@ -3,12 +3,6 @@
 # Nushell configuration
 # See https://www.nushell.sh/book/configuration.html
 
-use std/util "path add"
-path add /opt/homebrew/bin
-path add "~/.local/bin"
-path add "~/.cargo/bin"
-path add "~/.nvm"
-
 # settings
 $env.config.buffer_editor = 'nvim'
 $env.config.plugins.highlight.theme = 'gruvbox-dark'
@@ -180,6 +174,8 @@ $env.config.menus = [
     }
   }
 ]
+
+source ~/.zoxide.nu
 
 # aliases
 def ll [] { ls -a | sort-by type name }
