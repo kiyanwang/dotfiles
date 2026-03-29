@@ -35,7 +35,8 @@ sketchybar --default "${default[@]}"
 
 sketchybar --add event aerospace_workspace_change
 
-for sid in $(aerospace list-workspaces --all); do
+# Secondary monitor workspaces first, then main
+for sid in 7 8 9 1 2 3 4 5 6; do
     sketchybar --add item space.$sid left \
         --subscribe space.$sid aerospace_workspace_change \
         --set space.$sid \
@@ -47,6 +48,28 @@ for sid in $(aerospace list-workspaces --all); do
         click_script="aerospace workspace $sid" \
         script="$CONFIG_DIR/plugins/aerospace.sh $sid"
 done
+
+# Divider between secondary and main workspaces
+sketchybar --add item separator left \
+           --set separator \
+           icon="│" \
+           icon.color=0xffa8c8e8 \
+           icon.padding_left=4 \
+           icon.padding_right=4 \
+           label.drawing=off \
+           background.drawing=off
+
+# Move separator after workspace 9, before workspace 1
+sketchybar --move separator after space.9
+
+# Bracket all workspaces and separator with rounded border
+sketchybar --add bracket workspaces '/space\..*/' separator \
+           --set workspaces \
+           background.color=0x33ffffff \
+           background.corner_radius=10 \
+           background.height=28 \
+           background.border_color=0xffa8c8e8 \
+           background.border_width=2
 
 
 ##### Adding Mission Control Space Indicators #####
