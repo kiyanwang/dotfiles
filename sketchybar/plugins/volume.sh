@@ -18,3 +18,13 @@ if [ "$SENDER" = "volume_change" ]; then
 
   sketchybar --set "$NAME" icon="$ICON" label="$VOLUME%"
 fi
+
+if [ "$SENDER" = "mouse.scrolled" ]; then
+  VOLUME=$(osascript -e 'output volume of (get volume settings)')
+  if [ "$SCROLL_DELTA" -gt 0 ]; then
+    VOLUME=$(( VOLUME + 5 > 100 ? 100 : VOLUME + 5 ))
+  else
+    VOLUME=$(( VOLUME - 5 < 0 ? 0 : VOLUME - 5 ))
+  fi
+  osascript -e "set volume output volume $VOLUME"
+fi
