@@ -68,15 +68,15 @@ on-mode-changed = []
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [workspace-to-monitor-force-assignment]
-1 = 'DELL U3415W'
-2 = 'DELL U3415W'
-3 = 'DELL U3415W'
-4 = 'DELL U3415W'
-5 = 'DELL U3415W'
-6 = 'DELL U3415W'
-7 = 'Built-in Retina Display'
-8 = 'Built-in Retina Display'
-9 = 'Built-in Retina Display'
+1 = 'main'
+2 = 'main'
+3 = 'main'
+4 = 'main'
+5 = 'main'
+6 = 'main'
+7 = 'secondary'
+8 = 'secondary'
+9 = 'secondary'
 
 [gaps]
     inner.horizontal = 10
@@ -110,14 +110,8 @@ on-mode-changed = []
     # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-    # You can uncomment the following lines to open up terminal with alt + enter shortcut
-    # (like in i3)
-    # alt-enter = '''exec-and-forget osascript -e '
-    # tell application "Terminal"
-    #     do script
-    #     activate
-    # end tell'
-    # '''
+    alt-enter = 'exec-and-forget open -n -a Ghostty'
+    alt-b = '''exec-and-forget osascript -e 'tell application "Google Chrome" to make new window' '''
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     alt-slash = 'layout tiles horizontal vertical'
