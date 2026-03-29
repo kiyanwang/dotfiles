@@ -13,6 +13,7 @@ unfocused-split-fill = #1e1e2e
 # Divider color between splits
 split-divider-color = #3e4451
 
+macos-titlebar-style = transparent
 background-opacity = 0.8
 background-blur = 20
 
@@ -20,3 +21,4 @@ cursor-style = block
 cursor-style-blink = true
 cursor-text = #1e1e2e
 cursor-color = #ff0000
+
