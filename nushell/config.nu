@@ -176,6 +176,7 @@ $env.config.menus = [
 ]
 
 source ~/.zoxide.nu
+source ~/.local/share/atuin/init.nu
 
 # aliases
 def ll [] { ls -a | sort-by type name }
