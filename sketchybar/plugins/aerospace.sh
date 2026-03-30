@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-# make sure it's executable with:
-# chmod +x ~/.config/sketchybar/plugins/aerospace.sh
+VISIBLE_WORKSPACES=$(aerospace list-workspaces --monitor all --visible)
 
-if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
+if echo "$VISIBLE_WORKSPACES" | grep -qx "$1"; then
     sketchybar --set $NAME background.drawing=off label.color=0xfff7768e
 else
     sketchybar --set $NAME background.drawing=off label.color=0xff7aa2f7
