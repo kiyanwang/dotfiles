@@ -13,7 +13,9 @@ unfocused-split-fill = #1e1e2e
 # Divider color between splits
 split-divider-color = #3e4451
 
-macos-titlebar-style = transparent
+macos-titlebar-style = hidden
+window-padding-x = 15
+window-padding-y = 15
 background-opacity = 0.8
 background-blur = 20
 
