@@ -138,8 +138,19 @@ sketchybar --add item clock right \
            --subscribe mic mouse.clicked \
            --add item volume right \
            --set volume script="$PLUGIN_DIR/volume.sh" \
+           popup.align=center \
+           popup.y_offset=2 \
            click_script="open x-apple.systempreferences:com.apple.Sound-Settings.extension" \
-           --subscribe volume volume_change mouse.scrolled \
+           --subscribe volume volume_change mouse.scrolled mouse.entered mouse.exited.global \
+           --add slider volume_slider popup.volume 250 \
+           --set volume_slider \
+           slider.highlight_color=0xff7aa2f7 \
+           slider.background.height=6 \
+           slider.background.corner_radius=3 \
+           slider.background.color=0xff313244 \
+           slider.knob.drawing=off \
+           script="$PLUGIN_DIR/volume_slider.sh" \
+           --subscribe volume_slider mouse.clicked mouse.exited \
            --add item battery right \
            --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
            --subscribe battery system_woke power_source_change \
