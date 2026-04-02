@@ -45,12 +45,18 @@ sketchybar --add event aerospace_workspace_change
 # Secondary monitor workspaces first, then main
 for sid in 7 8 9 1 2 3 4 5 6; do
     sketchybar --add item space.$sid left \
-        --subscribe space.$sid aerospace_workspace_change \
+        --subscribe space.$sid aerospace_workspace_change mouse.entered mouse.exited \
         --set space.$sid \
         background.color=0x44ffffff \
         background.corner_radius=5 \
         background.height=20 \
         background.drawing=off \
+        popup.align=center \
+        popup.y_offset=2 \
+        popup.background.color=0xff1e1e2e \
+        popup.background.corner_radius=8 \
+        popup.background.border_color=0xff7aa2f7 \
+        popup.background.border_width=1 \
         label="$sid" \
         click_script="aerospace workspace $sid" \
         script="$CONFIG_DIR/plugins/aerospace.sh $sid"
