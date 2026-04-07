@@ -116,7 +116,8 @@ on-mode-changed = []
     # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-    alt-enter = 'exec-and-forget open -a Ghostty'
+    alt-enter = '''exec-and-forget osascript -e 'tell application "Ghostty" to activate' -e 'tell application "System Events" to keystroke "n" using command down' '''
+    alt-shift-enter = '''exec-and-forget osascript -e 'tell application "WezTerm" to activate' -e 'tell application "System Events" to keystroke "n" using command down' '''
     alt-b = '''exec-and-forget osascript -e 'tell application "Google Chrome" to make new window' '''
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
