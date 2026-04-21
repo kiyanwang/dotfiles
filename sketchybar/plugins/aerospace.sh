@@ -6,6 +6,11 @@ WORKSPACE_ID="$1"
 
 case "$SENDER" in
   mouse.entered)
+    # Dismiss all workspace popups first to prevent stale popups stacking
+    for sid in 1 2 3 4 5 6 7 8 9; do
+      sketchybar --set "space.$sid" popup.drawing=off 2>/dev/null
+    done
+
     APPS=$(aerospace list-windows --workspace "$WORKSPACE_ID" --format '%{app-name}' 2>/dev/null)
     if [ -z "$APPS" ]; then
       sketchybar --set "$NAME" popup.drawing=off
