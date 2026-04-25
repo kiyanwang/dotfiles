@@ -1,46 +1,54 @@
 #!/bin/bash
-cd ~/.vim/bundle
-git clone https://github.com/MattesGroeger/vim-bookmarks.git
-git clone https://github.com/SirVer/ultisnips.git
-git clone https://github.com/adoy/vim-php-refactoring-toolbox.git
-git clone https://github.com/airblade/vim-gitgutter.git
-git clone https://github.com/bling/vim-airline.git
-git clone https://github.com/blueyed/vim-diminactive
-git clone https://github.com/bogado/file-line.git
-git clone https://github.com/chase/vim-ansible-yaml
-git clone https://github.com/christoomey/vim-tmux-navigator.git
-git clone https://github.com/derekprior/vim-trimmer.git
-git clone https://github.com/duggiefresh/vim-easydir.git
-git clone https://github.com/easymotion/vim-easymotion.git
-git clone https://github.com/ekalinin/Dockerfile.vim.git
-git clone https://github.com/elzr/vim-json
-git clone https://github.com/farseer90718/vim-taskwarrior
-git clone https://github.com/godlygeek/tabular.git
-git clone https://github.com/gregsexton/gitv.git
-git clone https://github.com/heavenshell/vim-jsdoc
-git clone https://github.com/henrik/vim-qargs.git
-git clone https://github.com/honza/vim-snippets.git
-git clone https://github.com/kchmck/vim-coffee-script.git
-git clone https://github.com/kien/ctrlp.vim.git
-git clone https://github.com/lifepillar/vim-solarized8.git ~/.vim/pack/themes/opt/solarized8
-git clone https://github.com/majutsushi/tagbar.git
-git clone https://github.com/mattn/gist-vim.git
-git clone https://github.com/mhinz/vim-startify.git
-git clone https://github.com/moll/vim-node.git
-git clone https://github.com/mtscout6/syntastic-local-eslint.vim.git
-git clone https://github.com/pangloss/vim-javascript
-git clone https://github.com/pearofducks/ansible-vim.git
-git clone https://github.com/prettier/vim-prettier
-git clone https://github.com/rking/ag.vim.git
-git clone https://github.com/robbles/logstash.vim.git
-git clone https://github.com/rodjek/vim-puppet.git
-git clone https://github.com/scrooloose/nerdcommenter.git
-git clone https://github.com/scrooloose/nerdtree.git
-git clone https://github.com/scrooloose/syntastic.git
-git clone https://github.com/sjl/gundo.vim.git
-git clone https://github.com/terryma/vim-multiple-cursors.git
-git clone https://github.com/thaerkh/vim-workspace.git
-git clone https://github.com/tpope/vim-abolish.git
-git clone https://github.com/tpope/vim-fugitive.git
-git clone https://github.com/tpope/vim-surround.git
-git clone https://github.com/yssl/QFEnter.git
+set -euo pipefail
+
+DOTFILES="$(cd "$(dirname "$0")" && pwd)"
+
+echo "==> Installing Homebrew (if needed)"
+if ! command -v brew &>/dev/null; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+echo "==> Installing CLI tools"
+brew install nushell neovim zoxide atuin eza git tmux ripgrep fd
+
+echo "==> Installing GUI apps"
+brew install --cask ghostty karabiner-elements nikitabobko/tap/aerospace
+
+echo "==> Installing nvm"
+if [ ! -d "$HOME/.nvm" ]; then
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+fi
+
+echo "==> Installing Rust toolchain"
+if ! command -v rustup &>/dev/null; then
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+fi
+
+echo "==> Creating symlinks"
+
+# Nushell
+mkdir -p "$HOME/Library/Application Support/nushell"
+ln -sf "$DOTFILES/nushell/config.nu" "$HOME/Library/Application Support/nushell/config.nu"
+ln -sf "$DOTFILES/nushell/env.nu" "$HOME/Library/Application Support/nushell/env.nu"
+
+# Neovim
+mkdir -p "$HOME/.config"
+ln -sfn "$DOTFILES/nvim" "$HOME/.config/nvim"
+
+# Ghostty
+ln -sfn "$DOTFILES/ghostty" "$HOME/.config/ghostty"
+
+# AeroSpace
+ln -sf "$DOTFILES/aerospace/.aerospace.toml" "$HOME/.aerospace.toml"
+
+# Karabiner
+mkdir -p "$HOME/.config/karabiner"
+ln -sf "$DOTFILES/karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
+
+echo "==> Generating zoxide init script"
+zoxide init nushell | tee "$HOME/.zoxide.nu" >/dev/null
+
+echo "==> Done! Open Ghostty and run 'nu' to get started."
+echo "    Note: Karabiner-Elements and AeroSpace need permissions in"
+echo "    System Settings > Privacy & Security before they'll work."

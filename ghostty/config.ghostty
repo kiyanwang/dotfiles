@@ -1,0 +1,26 @@
+font-family = SauceCodePro Nerd Font Mono
+font-size = 18
+
+# Scrollback
+scrollback-limit = 500000
+
+# Opacity for unfocused splits (0.0 to 1.0)
+unfocused-split-opacity = 0.5
+
+# Fill color for unfocused splits
+unfocused-split-fill = #1e1e2e
+
+# Divider color between splits
+split-divider-color = #3e4451
+
+macos-titlebar-style = hidden
+window-padding-x = 15
+window-padding-y = 15
+background-opacity = 0.8
+background-blur = 20
+
+cursor-style = block
+cursor-style-blink = true
+cursor-text = #1e1e2e
+cursor-color = #ff0000
+
