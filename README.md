@@ -1,17 +1,19 @@
-```text
-╭──────────────────────────────────────────────────╮
-│                                                  │
-│   ◆  d o t f i l e s                             │
-│      a quietly opinionated macOS workflow        │
-│                                                  │
-│      nadeem shabir · staff engineer · bibliu     │
-│                                                  │
-╰──────────────────────────────────────────────────╯
-```
+<div align="center">
 
-> A keyboard-driven macOS setup built around **Neovim (Lua)**, **Nushell**, **AeroSpace**, and **SketchyBar**. Tokyo Night palette, JetBrains Mono everywhere, one Hyper key to rule them all.
+<pre>
+ ██████╗ ██╗  ██╗██╗██╗   ██╗ █████╗ ███╗   ██╗██╗    ██╗ █████╗ ███╗   ██╗ ██████╗
+██╔═══██╗██║ ██╔╝██║╚██╗ ██╔╝██╔══██╗████╗  ██║██║    ██║██╔══██╗████╗  ██║██╔════╝
+██║██╗██║█████╔╝ ██║ ╚████╔╝ ███████║██╔██╗ ██║██║ █╗ ██║███████║██╔██╗ ██║██║  ███╗
+██║██║██║██╔═██╗ ██║  ╚██╔╝  ██╔══██║██║╚██╗██║██║███╗██║██╔══██║██║╚██╗██║██║   ██║
+╚█║████╔╝██║  ██╗██║   ██║   ██║  ██║██║ ╚████║╚███╔███╔╝██║  ██║██║ ╚████║╚██████╔╝
+ ╚╝╚═══╝ ╚═╝  ╚═╝╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝
+</pre>
 
-![The setup in one shot — Neovim, kiyanwang.github.io, and two Ghostty windows tiled by AeroSpace, with SketchyBar across the top.](docs/screenshots/desktop.png)
+### a quietly opinionated macOS workflow
+
+_Nadeem Shabir · Staff Engineer at [BibliU](https://bibliu.com)_
+
+![Neovim, kiyanwang.github.io, and two Ghostty windows tiled by AeroSpace, with SketchyBar across the top.](docs/screenshots/desktop.png)
 
 [![Neovim](https://img.shields.io/badge/neovim-0.11+-ff8400?style=flat-square&logo=neovim&logoColor=white&labelColor=1a1a1a)](https://neovim.io)
 [![Nushell](https://img.shields.io/badge/nushell-shell-ff8400?style=flat-square&logo=gnometerminal&logoColor=white&labelColor=1a1a1a)](https://www.nushell.sh)
@@ -22,9 +24,13 @@
 [![Karabiner](https://img.shields.io/badge/karabiner-hyper_key-ff8400?style=flat-square&logoColor=white&labelColor=1a1a1a)](https://karabiner-elements.pqrs.org)
 [![macOS](https://img.shields.io/badge/macOS-Sequoia+-ff8400?style=flat-square&logo=apple&logoColor=white&labelColor=1a1a1a)](#)
 
----
+**[Editor](#editor) · [Shell](#shell) · [Window Manager](#window-manager) · [Status Bar](#status-bar) · [Terminals](#terminals) · [Hyper Key](#hyper-key) · [Borders](#borders) · [About](#about)**
 
-### ▸ THE STACK
+</div>
+
+> A keyboard-driven macOS setup built around **Neovim (Lua)**, **Nushell**, **AeroSpace**, and **SketchyBar**. Tokyo Night palette, JetBrains Mono everywhere, one Hyper key to rule them all.
+
+## The Stack
 
 | Layer           | Tool                | Why                                                 |
 | --------------- | ------------------- | --------------------------------------------------- |
@@ -37,9 +43,7 @@
 | Borders         | JankyBorders        | Active/inactive window outlines                     |
 | History         | Atuin + zoxide      | Encrypted shared history; frecency `cd`            |
 
----
-
-### ▸ INSTALL
+## Install
 
 ```bash
 git clone https://github.com/kiyanwang/dotfiles ~/dotfiles
@@ -59,9 +63,8 @@ dotfiles/karabiner/  → ~/.config/karabiner/
 
 Karabiner-Elements and AeroSpace need accessibility permissions in **System Settings → Privacy & Security** before they'll wake up properly.
 
----
-
-### ▸ THE EDITOR — Neovim
+<a id="editor"></a>
+## The Editor — Neovim
 
 VimScript and CoC are out. The whole config is Lua, lazy-loaded, and uses Neovim 0.11's native LSP API.
 
@@ -74,7 +77,10 @@ VimScript and CoC are out. The whole config is Lua, lazy-loaded, and uses Neovim
 - **Treesitter** for syntax + textobjects, **Gitsigns**, **Flash**, **Which-Key**
 - **Catppuccin Mocha**, transparent, **alpha-nvim** dashboard
 
-The whole point of the migration was keeping the muscle memory:
+<details>
+<summary><b>Keymap</b></summary>
+
+<br>
 
 | Keys              | What                                  |
 | ----------------- | ------------------------------------- |
@@ -89,9 +95,10 @@ The whole point of the migration was keeping the muscle memory:
 | `Tab`             | completion (supertab)                 |
 | `Ctrl-h/j/k/l`    | move between splits and tmux panes    |
 
----
+</details>
 
-### ▸ THE SHELL — Nushell
+<a id="shell"></a>
+## The Shell — Nushell
 
 Bash is gone. Everything is structured data — `ls` returns rows, `ps` returns rows, `http get` returns parsed JSON. Pipelines read like queries:
 
@@ -105,6 +112,11 @@ ps | where cpu > 5 | sort-by cpu --reverse | first 10
 - Homebrew + nvm's default Node bin on `PATH` (set in `env.nu` so zoxide init can find them)
 - `vi` / `vim` / `view` all alias to `nvim` — no muscle memory tax
 
+<details>
+<summary><b>Aliases worth knowing</b></summary>
+
+<br>
+
 | Alias / command | Does                                                      |
 | --------------- | --------------------------------------------------------- |
 | `ll [path]`     | `ls -a` sorted by type and name                           |
@@ -112,11 +124,19 @@ ps | where cpu > 5 | sort-by cpu --reverse | first 10
 | `whatsmyip`     | `http get ipecho.net/plain`                               |
 | `clc`           | `claude --allow-dangerously-skip-permissions --chrome`    |
 
----
+</details>
 
-### ▸ THE WINDOW MANAGER — AeroSpace
+<a id="window-manager"></a>
+## The Window Manager — AeroSpace
 
 Tiling, scriptable, no SIP disable. Workspaces **1–6** live on the main monitor, **7–9** on the secondary. They persist whether they hold windows or not. Mouse follows focus across monitors.
+
+> **Why `ctrl-alt-cmd-shift` and not plain `alt-1..9`?** UK ISO keyboards type `#` on `alt-3`. So workspace switching moved to Hyper (via the `§` key), freeing `alt-3` to actually type a hash.
+
+<details>
+<summary><b>Keymap</b></summary>
+
+<br>
 
 | Keys                          | Action                                            |
 | ----------------------------- | ------------------------------------------------- |
@@ -134,11 +154,10 @@ Tiling, scriptable, no SIP disable. Workspaces **1–6** live on the main monito
 | `alt-b`                       | new Chrome window                                 |
 | `alt-shift-;`                 | enter service mode (`r` reset, `f` float, `←` close-others, joins) |
 
-> **Why `ctrl-alt-cmd-shift` and not plain `alt-1..9`?** UK ISO keyboards type `#` on `alt-3`. So workspace switching moved to Hyper (via the `§` key), freeing `alt-3` to actually type a hash.
+</details>
 
----
-
-### ▸ THE STATUS BAR — SketchyBar
+<a id="status-bar"></a>
+## The Status Bar — SketchyBar
 
 Apple's menu bar is non-negotiable about layout. SketchyBar isn't.
 
@@ -149,22 +168,20 @@ Apple's menu bar is non-negotiable about layout. SketchyBar isn't.
 - Clock formatted `Thu 2 Apr · 14:32`.
 - Tokyo Night palette, blurred background, rounded brackets.
 
-Workspace updates triggered from AeroSpace via `sketchybar --trigger aerospace_workspace_change`.
+Workspace updates trigger from AeroSpace via `sketchybar --trigger aerospace_workspace_change`.
 
----
-
-### ▸ THE TERMINALS — Ghostty + WezTerm
+<a id="terminals"></a>
+## The Terminals — Ghostty + WezTerm
 
 Same face on both. **Catppuccin Macchiato**, **SauceCodePro Nerd Font**, **80% opacity with blur**, **blinking red block cursor**, hidden titlebar.
 
-- `alt-enter` → new **Ghostty** window (osascript `Cmd+N` so it actually opens a new window, not just focuses)
+- `alt-enter` → new **Ghostty** window (via osascript so it actually opens a new window, not just focuses)
 - `alt-shift-enter` → new **WezTerm** window
 
 Ghostty is the daily driver. WezTerm comes out for SSH multiplexing or Lua-scripted layouts.
 
----
-
-### ▸ THE HYPER KEY — Karabiner
+<a id="hyper-key"></a>
+## The Hyper Key — Karabiner
 
 The trick: I never use `§` (the section sign). On UK ISO Macs it sits where US keyboards put backtick. Karabiner remaps it to **Hyper = `ctrl + opt + shift + cmd`** — a chord nothing else binds.
 
@@ -173,28 +190,24 @@ The trick: I never use `§` (the section sign). On UK ISO Macs it sits where US 
 
 Works on the Keychron and the built-in MacBook ISO keyboard — the laptop reports `§` as `non_us_backslash`, so there's a device-scoped manipulator for that case.
 
----
-
-### ▸ THE BORDERS — JankyBorders
+<a id="borders"></a>
+## The Borders — JankyBorders
 
 Round corners. **Active red** `#f7768e`. **Inactive blue** `#7aa2f7`. Subtle — the sort of thing you only stop noticing because it's always right.
 
----
+## Aesthetic
 
-### ▸ AESTHETIC
+|     | Token       | Hex                                          |
+| --- | ----------- | -------------------------------------------- |
+| ![#1a1b26](https://placehold.co/16x16/1a1b26/1a1b26.png) | bg        | `#1a1b26` Tokyo Night                  |
+| ![#7aa2f7](https://placehold.co/16x16/7aa2f7/7aa2f7.png) | accent    | `#7aa2f7` blue                         |
+| ![#f7768e](https://placehold.co/16x16/f7768e/f7768e.png) | highlight | `#f7768e` salmon                       |
+| ![#ff8400](https://placehold.co/16x16/ff8400/ff8400.png) | site      | `#ff8400` orange (kiyanwang.github.io) |
 
-| Token       | Hex                                          |
-| ----------- | -------------------------------------------- |
-| bg          | `#1a1b26` Tokyo Night                        |
-| accent      | `#7aa2f7` blue                               |
-| highlight   | `#f7768e` salmon                             |
-| code font   | JetBrains Mono · SauceCodePro Nerd Font      |
+Code in **JetBrains Mono**, terminals in **SauceCodePro Nerd Font**.
 
-The site shares the language — `#111` background, JetBrains Mono, signature orange `#ff8400` for accents.
-
----
-
-### ▸ COLOPHON
+<a id="about"></a>
+## About
 
 Built and maintained by **Nadeem Shabir** — Staff Engineer at [BibliU](https://bibliu.com). Platform builder, team grower, occasional startup advisor.
 
