@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 52" width="600" height="52" font-family="ui-monospace, 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace">
+  <g transform="translate(8, 12)" fill="#7C3AED">
+    <path d="M14 2 C8 2 4 6 4 12 L4 26 L7.5 22.5 L11 26 L14 22.5 L17 26 L20.5 22.5 L24 26 L24 12 C24 6 20 2 14 2 Z"/>
+    <circle cx="10" cy="11" r="1.5" fill="white"/>
+    <circle cx="18" cy="11" r="1.5" fill="white"/>
+  </g>
+  <text x="46" y="34" font-size="24" font-weight="700" fill="#7C3AED">Ghostty + WezTerm</text>
+  <text x="592" y="34" font-size="10" font-weight="500" fill="#7C3AED" opacity="0.7" text-anchor="end" letter-spacing="3">THE TERMINALS</text>
+</svg>

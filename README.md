@@ -56,8 +56,7 @@ dotfiles/karabiner/  → ~/.config/karabiner/
 
 Karabiner-Elements and AeroSpace need accessibility permissions in **System Settings → Privacy & Security** before they'll wake up properly.
 
-<a id="editor"></a>
-## The Editor — Neovim
+<h2 id="editor"><img src="docs/headings/editor.svg" alt="Neovim · The Editor" /></h2>
 
 VimScript and CoC are out. The whole config is Lua, lazy-loaded, and uses Neovim 0.11's native LSP API.
 
@@ -90,8 +89,7 @@ VimScript and CoC are out. The whole config is Lua, lazy-loaded, and uses Neovim
 
 </details>
 
-<a id="shell"></a>
-## The Shell — Nushell
+<h2 id="shell"><img src="docs/headings/shell.svg" alt="Nushell · The Shell" /></h2>
 
 Bash is gone. Everything is structured data — `ls` returns rows, `ps` returns rows, `http get` returns parsed JSON. Pipelines read like queries:
 
@@ -119,8 +117,7 @@ ps | where cpu > 5 | sort-by cpu --reverse | first 10
 
 </details>
 
-<a id="window-manager"></a>
-## The Window Manager — AeroSpace
+<h2 id="window-manager"><img src="docs/headings/window-manager.svg" alt="AeroSpace · The Window Manager" /></h2>
 
 Tiling, scriptable, no SIP disable. Workspaces **1–6** live on the main monitor, **7–9** on the secondary. They persist whether they hold windows or not. Mouse follows focus across monitors.
 
@@ -149,8 +146,7 @@ Tiling, scriptable, no SIP disable. Workspaces **1–6** live on the main monito
 
 </details>
 
-<a id="status-bar"></a>
-## The Status Bar — SketchyBar
+<h2 id="status-bar"><img src="docs/headings/status-bar.svg" alt="SketchyBar · The Status Bar" /></h2>
 
 Apple's menu bar is non-negotiable about layout. SketchyBar isn't.
 
@@ -163,8 +159,7 @@ Apple's menu bar is non-negotiable about layout. SketchyBar isn't.
 
 Workspace updates trigger from AeroSpace via `sketchybar --trigger aerospace_workspace_change`.
 
-<a id="terminals"></a>
-## The Terminals — Ghostty + WezTerm
+<h2 id="terminals"><img src="docs/headings/terminals.svg" alt="Ghostty + WezTerm · The Terminals" /></h2>
 
 Same face on both. **Catppuccin Macchiato**, **SauceCodePro Nerd Font**, **80% opacity with blur**, **blinking red block cursor**, hidden titlebar.
 
@@ -173,8 +168,7 @@ Same face on both. **Catppuccin Macchiato**, **SauceCodePro Nerd Font**, **80% o
 
 Ghostty is the daily driver. WezTerm comes out for SSH multiplexing or Lua-scripted layouts.
 
-<a id="hyper-key"></a>
-## The Hyper Key — Karabiner
+<h2 id="hyper-key"><img src="docs/headings/hyper-key.svg" alt="Karabiner · The Hyper Key" /></h2>
 
 The trick: I never use `§` (the section sign). On UK ISO Macs it sits where US keyboards put backtick. Karabiner remaps it to **Hyper = `ctrl + opt + shift + cmd`** — a chord nothing else binds.
 
@@ -183,8 +177,7 @@ The trick: I never use `§` (the section sign). On UK ISO Macs it sits where US 
 
 Works on the Keychron and the built-in MacBook ISO keyboard — the laptop reports `§` as `non_us_backslash`, so there's a device-scoped manipulator for that case.
 
-<a id="borders"></a>
-## The Borders — JankyBorders
+<h2 id="borders"><img src="docs/headings/borders.svg" alt="JankyBorders · The Borders" /></h2>
 
 Round corners. **Active red** `#f7768e`. **Inactive blue** `#7aa2f7`. Subtle — the sort of thing you only stop noticing because it's always right.
 

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 52" width="600" height="52" font-family="ui-monospace, 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace">
+  <g transform="translate(8, 12)" fill="#57A143">
+    <path d="M2 2 L7 2 L21 20 L21 2 L26 2 L26 26 L21 26 L7 8 L7 26 L2 26 Z"/>
+  </g>
+  <text x="46" y="34" font-size="24" font-weight="700" fill="#57A143">Neovim</text>
+  <text x="592" y="34" font-size="10" font-weight="500" fill="#57A143" opacity="0.7" text-anchor="end" letter-spacing="3">THE EDITOR</text>
+</svg>

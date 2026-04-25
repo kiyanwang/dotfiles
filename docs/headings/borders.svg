@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 52" width="600" height="52" font-family="ui-monospace, 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace">
+  <g transform="translate(8, 12)">
+    <rect x="2" y="2" width="24" height="24" rx="4" fill="none" stroke="#f7768e" stroke-width="2.5"/>
+    <rect x="6" y="6" width="16" height="16" fill="#f7768e" opacity="0.2"/>
+  </g>
+  <text x="46" y="34" font-size="24" font-weight="700" fill="#f7768e">JankyBorders</text>
+  <text x="592" y="34" font-size="10" font-weight="500" fill="#f7768e" opacity="0.7" text-anchor="end" letter-spacing="3">THE BORDERS</text>
+</svg>
