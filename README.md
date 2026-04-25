@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/banner.svg" alt="kiyanwang" width="760" />
+<img src="docs/banner.svg" alt="@kiyanwang · dotfiles" width="600" />
 
 ### a quietly opinionated macOS workflow
 
