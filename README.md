@@ -11,6 +11,8 @@
 
 > A keyboard-driven macOS setup built around **Neovim (Lua)**, **Nushell**, **AeroSpace**, and **SketchyBar**. Tokyo Night palette, JetBrains Mono everywhere, one Hyper key to rule them all.
 
+![The setup in one shot — Neovim, kiyanwang.github.io, and two Ghostty windows tiled by AeroSpace, with SketchyBar across the top.](docs/screenshots/desktop.png)
+
 [![Neovim](https://img.shields.io/badge/neovim-0.11+-ff8400?style=flat-square&logo=neovim&logoColor=white&labelColor=1a1a1a)](https://neovim.io)
 [![Nushell](https://img.shields.io/badge/nushell-shell-ff8400?style=flat-square&logo=gnometerminal&logoColor=white&labelColor=1a1a1a)](https://www.nushell.sh)
 [![AeroSpace](https://img.shields.io/badge/aerospace-tiling_wm-ff8400?style=flat-square&logo=apple&logoColor=white&labelColor=1a1a1a)](https://github.com/nikitabobko/AeroSpace)
@@ -189,16 +191,6 @@ Round corners. **Active red** `#f7768e`. **Inactive blue** `#7aa2f7`. Subtle —
 | code font   | JetBrains Mono · SauceCodePro Nerd Font      |
 
 The site shares the language — `#111` background, JetBrains Mono, signature orange `#ff8400` for accents.
-
----
-
-### ▸ SCREENSHOTS
-
-_Drop captures into `docs/screenshots/` and link them here:_
-- _alpha-nvim dashboard_
-- _SketchyBar across two monitors_
-- _AeroSpace tiling Ghostty + Neovim + Chrome_
-- _§ → Hyper in action via Karabiner EventViewer_
 
 ---
 
