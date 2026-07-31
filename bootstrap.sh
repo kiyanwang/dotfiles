@@ -28,9 +28,15 @@ fi
 echo "==> Creating symlinks"
 
 # Nushell
-mkdir -p "$HOME/Library/Application Support/nushell"
-ln -sf "$DOTFILES/nushell/config.nu" "$HOME/Library/Application Support/nushell/config.nu"
-ln -sf "$DOTFILES/nushell/env.nu" "$HOME/Library/Application Support/nushell/env.nu"
+NU_CONFIG="$HOME/Library/Application Support/nushell"
+mkdir -p "$NU_CONFIG/autoload"
+ln -sf "$DOTFILES/nushell/config.nu" "$NU_CONFIG/config.nu"
+ln -sf "$DOTFILES/nushell/env.nu" "$NU_CONFIG/env.nu"
+# linear.nu is a module `use`d by autoload/claude.nu; it must live in the config
+# dir (not autoload) or Nushell double-loads it and errors with
+# "Can't evaluate block in IR mode".
+ln -sf "$DOTFILES/nushell/linear.nu" "$NU_CONFIG/linear.nu"
+ln -sf "$DOTFILES/nushell/autoload/claude.nu" "$NU_CONFIG/autoload/claude.nu"
 
 # Neovim
 mkdir -p "$HOME/.config"
