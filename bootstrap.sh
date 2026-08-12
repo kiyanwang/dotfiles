@@ -35,7 +35,11 @@ brew tap nikitabobko/tap
 brew trust --tap FelixKratz/formulae nikitabobko/tap 2>/dev/null || true
 
 echo "==> Installing CLI tools"
-brew install nushell starship neovim zoxide atuin eza git tmux ripgrep fd jq \
+# tree-sitter-cli provides the `tree-sitter` binary that nvim-treesitter's main
+# branch shells out to when it compiles parsers; without it every parser install
+# fails and nvim starts with no highlighting. Note it is a separate formula from
+# `tree-sitter`, which ships only the library.
+brew install nushell starship neovim zoxide atuin eza git tmux ripgrep fd jq tree-sitter-cli \
     FelixKratz/formulae/sketchybar \
     FelixKratz/formulae/borders
 
@@ -57,8 +61,9 @@ if [ ! -s "$NVM_DIR/nvm.sh" ]; then
 fi
 # shellcheck disable=SC1091
 . "$NVM_DIR/nvm.sh"
-# env.nu reads ~/.nvm/alias/default at startup, so a default alias MUST exist or
-# every Nushell launch errors. Mason's LSP servers need Node anyway.
+# Mason's LSP servers need Node. env.nu resolves the version directory itself and
+# copes with this alias being absent or floating ('lts/*' names no directory), so
+# the alias below is a convenience, not a hard requirement.
 nvm install --lts
 nvm alias default 'lts/*'
 
