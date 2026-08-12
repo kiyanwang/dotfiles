@@ -35,7 +35,7 @@ brew tap nikitabobko/tap
 brew trust --tap FelixKratz/formulae nikitabobko/tap 2>/dev/null || true
 
 echo "==> Installing CLI tools"
-brew install nushell neovim zoxide atuin eza git tmux ripgrep fd jq \
+brew install nushell starship neovim zoxide atuin eza git tmux ripgrep fd jq \
     FelixKratz/formulae/sketchybar \
     FelixKratz/formulae/borders
 
@@ -87,6 +87,11 @@ link_dir "$DOTFILES/wezterm" "$HOME/.config/wezterm"
 link_dir "$DOTFILES/sketchybar" "$HOME/.config/sketchybar"
 link_dir "$DOTFILES/borders" "$HOME/.config/borders"
 
+# Starship — the prompt format and Catppuccin palette. The prompt icons are
+# Nerd Font private-use glyphs (U+E711, U+F011B), so this needs the Nerd Font
+# installed above to render.
+ln -sf "$DOTFILES/starship/starship.toml" "$HOME/.config/starship.toml"
+
 # AeroSpace
 ln -sf "$DOTFILES/aerospace/.aerospace.toml" "$HOME/.aerospace.toml"
 
@@ -106,6 +111,10 @@ echo "==> Generating shell init scripts"
 zoxide init nushell | tee "$HOME/.zoxide.nu" >/dev/null
 mkdir -p "$HOME/.local/share/atuin"
 atuin init nushell | tee "$HOME/.local/share/atuin/init.nu" >/dev/null
+# Homebrew's starship formula only ships fish completions, so the Nushell hook
+# has to be generated. Nushell auto-sources everything in vendor/autoload.
+mkdir -p "$NU_CONFIG/vendor/autoload"
+starship init nu | tee "$NU_CONFIG/vendor/autoload/starship.nu" >/dev/null
 
 echo
 echo "==> Done! Open Ghostty and run 'nu' to get started."
